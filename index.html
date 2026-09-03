@@ -1,0 +1,1290 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#173f39" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Praktické informácie pre hostí Hotela Raj v Dobšinskej Maši: príchod, odchod, raňajky, reštaurácia a kontakty." />
+    <title>Hotel Raj – Informácie pre hostí</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --forest-950: #102e2a;
+        --forest-900: #173f39;
+        --forest-800: #1f554b;
+        --forest-700: #2b6a5d;
+        --lake: #87b8b8;
+        --cream: #f5f1e8;
+        --paper: #fffdf8;
+        --ink: #17231f;
+        --muted: #60706a;
+        --line: #dce4df;
+        --gold: #d7a84e;
+        --shadow: 0 16px 42px rgba(16, 46, 42, 0.12);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-size: 16px;
+        line-height: 1.55;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      a { color: inherit; }
+      button, a { -webkit-tap-highlight-color: transparent; }
+      .shell { width: min(100%, 780px); margin: 0 auto; }
+
+      .topbar {
+        position: absolute;
+        z-index: 4;
+        top: 0;
+        left: 50%;
+        width: min(100%, 780px);
+        padding: 18px 20px;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-shadow: 0 2px 16px rgba(0,0,0,.34);
+      }
+
+      .brand-mark {
+        width: 35px;
+        height: 35px;
+        border: 1px solid rgba(255,255,255,.7);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        font-family: Georgia, serif;
+        letter-spacing: 0;
+        background: rgba(16,46,42,.34);
+        backdrop-filter: blur(8px);
+      }
+
+      .language {
+        display: flex;
+        gap: 3px;
+        padding: 4px;
+        border: 1px solid rgba(255,255,255,.55);
+        border-radius: 999px;
+        background: rgba(16,46,42,.38);
+        backdrop-filter: blur(8px);
+      }
+
+      .language button {
+        min-width: 38px;
+        min-height: 34px;
+        padding: 6px 8px;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        color: white;
+        font-size: .82rem;
+        font-weight: 800;
+        cursor: pointer;
+      }
+
+      .language button[aria-pressed="true"] {
+        background: white;
+        color: var(--forest-950);
+      }
+
+      .hero {
+        position: relative;
+        min-height: 390px;
+        display: flex;
+        align-items: flex-end;
+        overflow: hidden;
+        background: var(--forest-950);
+        color: white;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(180deg, rgba(10,30,27,.28) 0%, rgba(10,30,27,.14) 34%, rgba(10,30,27,.90) 100%),
+          url("hotel-raj.jpg") center 44% / cover no-repeat;
+        transform: scale(1.01);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        padding: 108px 22px 40px;
+      }
+
+      .eyebrow {
+        margin: 0 0 6px;
+        color: #dbeae6;
+        font-size: .9rem;
+        font-weight: 700;
+        letter-spacing: .08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 620px;
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.4rem, 9vw, 4.4rem);
+        line-height: .98;
+        letter-spacing: -.035em;
+        text-wrap: balance;
+      }
+
+      .intro {
+        max-width: 560px;
+        margin: 15px 0 0;
+        color: #edf5f2;
+        font-size: 1.05rem;
+      }
+
+      main { padding: 0 16px 36px; }
+      .lift { position: relative; z-index: 2; margin-top: -18px; }
+
+      .quick-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,.6);
+        border-radius: 20px;
+        background: var(--paper);
+        box-shadow: var(--shadow);
+      }
+
+      .quick-item {
+        min-width: 0;
+        padding: 19px 12px 17px;
+        text-align: center;
+      }
+      .quick-item + .quick-item { border-left: 1px solid var(--line); }
+      .quick-label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.4em;
+        margin-bottom: 3px;
+        color: var(--muted);
+        font-size: .78rem;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: .055em;
+        text-transform: uppercase;
+      }
+      .quick-time {
+        display: block;
+        color: var(--forest-900);
+        font-size: clamp(1.18rem, 4.2vw, 1.55rem);
+        font-weight: 850;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -.03em;
+        white-space: nowrap;
+      }
+
+      .action-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 11px;
+      }
+      .action-link {
+        min-width: 0;
+        min-height: 64px;
+        padding: 10px 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(255,253,248,.86);
+        color: var(--forest-900);
+        font-size: .78rem;
+        font-weight: 800;
+        line-height: 1.15;
+        text-align: center;
+        text-decoration: none;
+      }
+      .action-icon {
+        color: var(--forest-700);
+        font-size: 1.08rem;
+        line-height: 1;
+      }
+      .action-icon svg {
+        width: 1.25em;
+        height: 1.25em;
+        display: block;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 1.8;
+      }
+
+      .section { margin-top: 28px; }
+      .section-heading {
+        margin: 0 4px 12px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.75rem;
+        line-height: 1.1;
+        letter-spacing: -.02em;
+        text-wrap: balance;
+      }
+
+      .card {
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: var(--paper);
+        box-shadow: 0 8px 24px rgba(16,46,42,.055);
+      }
+
+      .food-card { padding: 22px; }
+      .hours-row {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 14px;
+        padding: 13px 0;
+      }
+      .hours-row + .hours-row { border-top: 1px solid var(--line); }
+      .hours-name { font-weight: 750; }
+      .hours-time {
+        color: var(--forest-800);
+        font-size: 1.05rem;
+        font-weight: 850;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+      .supporting { margin: 15px 0 0; color: var(--muted); }
+
+      .special {
+        display: flex;
+        gap: 12px;
+        margin-top: 18px;
+        padding: 16px 17px;
+        border: 1px solid #ead29a;
+        border-radius: 16px;
+        background: #fff7df;
+        color: #604719;
+      }
+      .special-icon {
+        flex: 0 0 auto;
+        color: #ad7d1c;
+        font-size: 1.15rem;
+        line-height: 1.4;
+      }
+      .special strong { display: block; color: #49340f; }
+      .special p { margin: 2px 0 0; font-size: .94rem; }
+
+      .wellness-card {
+        display: grid;
+        grid-template-columns: 170px 1fr;
+        overflow: hidden;
+        border: 1px solid #315f55;
+        border-radius: 20px;
+        background: linear-gradient(135deg, var(--forest-950), var(--forest-800));
+        color: white;
+        box-shadow: var(--shadow);
+      }
+      .wellness-stat {
+        min-height: 220px;
+        padding: 26px 22px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-right: 1px solid rgba(255,255,255,.18);
+        background:
+          radial-gradient(circle at 50% 20%, rgba(215,168,78,.28), transparent 42%),
+          rgba(7,28,25,.24);
+        text-align: center;
+      }
+      .wellness-stat strong {
+        color: #f1c76f;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 3.45rem;
+        line-height: .95;
+        letter-spacing: -.055em;
+      }
+      .wellness-stat span {
+        margin-top: 8px;
+        color: #dbeae6;
+        font-size: .76rem;
+        font-weight: 800;
+        letter-spacing: .075em;
+        text-transform: uppercase;
+      }
+      .wellness-copy { padding: 27px 25px; }
+      .wellness-badge {
+        display: inline-flex;
+        margin-bottom: 10px;
+        padding: 5px 9px;
+        border: 1px solid rgba(241,199,111,.45);
+        border-radius: 999px;
+        background: rgba(215,168,78,.12);
+        color: #f1c76f;
+        font-size: .76rem;
+        font-weight: 800;
+        letter-spacing: .045em;
+        text-transform: uppercase;
+      }
+      .wellness-copy h3 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.7rem;
+        line-height: 1.05;
+      }
+      .wellness-prices {
+        display: grid;
+        gap: 8px;
+        margin: 17px 0 0;
+      }
+      .wellness-price {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 12px;
+        padding: 11px 12px;
+        border: 1px solid rgba(255,255,255,.18);
+        border-radius: 12px;
+        background: rgba(255,255,255,.07);
+      }
+      .wellness-price dt {
+        color: #e7f1ed;
+        font-size: .9rem;
+        font-weight: 750;
+      }
+      .wellness-price dd {
+        margin: 0;
+        color: #f1c76f;
+        font-size: 1.15rem;
+        font-weight: 850;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+      .wellness-price small {
+        color: #dbeae6;
+        font-size: .78rem;
+        font-weight: 750;
+      }
+      .wellness-copy p { margin: 14px 0 0; color: #dbeae6; }
+      .wellness-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        margin-top: 19px;
+      }
+      .wellness-action {
+        min-height: 46px;
+        padding: 11px 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255,255,255,.34);
+        border-radius: 12px;
+        color: white;
+        font-size: .88rem;
+        font-weight: 800;
+        text-decoration: none;
+      }
+      .wellness-action.primary {
+        border-color: white;
+        background: white;
+        color: var(--forest-950);
+      }
+
+      .link-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        min-height: 48px;
+        margin-top: 18px;
+        padding: 12px 17px;
+        border-radius: 13px;
+        background: var(--forest-900);
+        color: white;
+        font-weight: 800;
+        text-decoration: none;
+      }
+      .link-button:focus-visible, .language button:focus-visible, .contact-link:focus-visible,
+      .action-link:focus-visible, .wellness-action:focus-visible, .trip-link:focus-visible,
+      .safety-link:focus-visible, .feedback-link:focus-visible, summary:focus-visible {
+        outline: 3px solid var(--gold);
+        outline-offset: 3px;
+      }
+
+      .details-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .detail { padding: 18px; }
+      .detail-icon {
+        width: 38px;
+        height: 38px;
+        margin-bottom: 12px;
+        display: grid;
+        place-items: center;
+        border-radius: 12px;
+        background: #e6f0ec;
+        color: var(--forest-800);
+        font-size: 1.2rem;
+      }
+      .detail h3 { margin: 0 0 5px; font-size: 1rem; }
+      .detail p { margin: 0; color: var(--muted); font-size: .94rem; }
+      .credential {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 13px;
+        padding: 9px 11px;
+        border: 1px dashed #afc7bf;
+        border-radius: 11px;
+        background: #f1f7f4;
+      }
+      .credential span { color: var(--muted); font-size: .79rem; font-weight: 700; }
+      .credential strong {
+        max-width: 68%;
+        color: var(--forest-950);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        font-size: .88rem;
+        font-weight: 800;
+        letter-spacing: .015em;
+        line-height: 1.25;
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      .notice {
+        display: flex;
+        gap: 12px;
+        margin-top: 12px;
+        padding: 17px 18px;
+        border-radius: 18px;
+        background: #dfece8;
+        color: var(--forest-950);
+      }
+      .notice strong { display: block; }
+      .notice p { margin: 2px 0 0; color: #36574f; font-size: .94rem; }
+
+      .guest-details {
+        display: grid;
+        gap: 9px;
+        margin-top: 12px;
+      }
+      .guest-details details {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--paper);
+      }
+      .guest-details summary {
+        min-height: 52px;
+        padding: 14px 44px 14px 17px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-weight: 800;
+        cursor: pointer;
+        list-style: none;
+      }
+      .guest-details summary::-webkit-details-marker { display: none; }
+      .guest-details summary::after {
+        content: "+";
+        position: absolute;
+        right: 17px;
+        color: var(--forest-700);
+        font-size: 1.3rem;
+        font-weight: 500;
+      }
+      .guest-details details[open] summary::after { content: "−"; }
+      .guest-details p {
+        margin: 0;
+        padding: 0 17px 16px;
+        color: var(--muted);
+        font-size: .94rem;
+      }
+
+      .section-intro {
+        max-width: 610px;
+        margin: -3px 4px 14px;
+        color: var(--muted);
+      }
+      .trip-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+      .trip-card {
+        min-width: 0;
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+      }
+      .trip-number {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 15px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--forest-900);
+        color: white;
+        font-size: .76rem;
+        font-weight: 850;
+      }
+      .trip-label {
+        color: var(--forest-700);
+        font-size: .74rem;
+        font-weight: 850;
+        letter-spacing: .045em;
+        text-transform: uppercase;
+      }
+      .trip-card h3 { margin: 5px 0 7px; font-size: 1.02rem; line-height: 1.2; }
+      .trip-card p { margin: 0; color: var(--muted); font-size: .9rem; }
+      .trip-link {
+        margin-top: auto;
+        padding-top: 15px;
+        color: var(--forest-800);
+        font-size: .86rem;
+        font-weight: 850;
+        text-decoration: none;
+      }
+      .conditions-link {
+        min-height: 50px;
+        margin-top: 10px;
+        padding: 12px 17px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        border: 1px solid #b9cdc7;
+        border-radius: 15px;
+        background: #e8f1ee;
+        color: var(--forest-900);
+        font-weight: 850;
+        text-decoration: none;
+      }
+
+      .contact-card { overflow: hidden; }
+      .address { padding: 21px 22px 17px; }
+      .address p { margin: 4px 0 0; color: var(--muted); }
+      .contact-details {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px 18px;
+        margin-top: 13px;
+      }
+      .contact-details a {
+        color: var(--forest-800);
+        font-weight: 800;
+        overflow-wrap: anywhere;
+        text-decoration: none;
+      }
+      .contact-links {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-top: 1px solid var(--line);
+      }
+      .contact-link {
+        min-width: 0;
+        padding: 15px 8px;
+        color: var(--forest-900);
+        font-size: .9rem;
+        font-weight: 800;
+        text-align: center;
+        text-decoration: none;
+      }
+      .contact-link + .contact-link { border-left: 1px solid var(--line); }
+
+      .safety-card {
+        margin-top: 18px;
+        padding: 18px;
+        border: 1px solid #ead7c6;
+        border-radius: 18px;
+        background: #fff7ee;
+      }
+      .safety-card h3 { margin: 0; color: #563317; font-size: 1.02rem; }
+      .safety-card p { margin: 6px 0 14px; color: #744825; font-size: .94rem; }
+      .safety-actions {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+      }
+      .safety-link {
+        min-height: 48px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ead7c6;
+        border-radius: 12px;
+        background: rgba(255,255,255,.64);
+        color: #744825;
+        font-size: .78rem;
+        font-weight: 800;
+        line-height: 1.2;
+        text-align: center;
+        text-decoration: none;
+      }
+      .safety-link strong { color: #563317; font-size: 1.05rem; }
+
+      .feedback-card {
+        margin-top: 12px;
+        padding: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        border-radius: 18px;
+        background: var(--forest-900);
+        color: white;
+      }
+      .feedback-card strong { display: block; }
+      .feedback-card p { margin: 3px 0 0; color: #dbeae6; font-size: .9rem; }
+      .feedback-link {
+        flex: 0 0 auto;
+        min-height: 46px;
+        padding: 11px 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        background: white;
+        color: var(--forest-950);
+        font-size: .86rem;
+        font-weight: 850;
+        text-decoration: none;
+      }
+
+      footer {
+        padding: 24px 20px 38px;
+        color: #63726d;
+        font-size: .86rem;
+        text-align: center;
+      }
+      footer a { color: var(--forest-800); font-weight: 750; text-underline-offset: 3px; }
+
+      @media (max-width: 560px) {
+        .topbar {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 10px;
+          padding-inline: 14px;
+        }
+        .brand { flex: 1 1 100%; justify-content: center; }
+        .language { justify-content: center; }
+        .hero-content { padding-top: 150px; }
+        h1 { font-size: clamp(2.2rem, 10vw, 3rem); }
+        .wellness-card { grid-template-columns: 1fr; }
+        .wellness-stat {
+          min-height: 132px;
+          border-right: 0;
+          border-bottom: 1px solid rgba(255,255,255,.18);
+        }
+        .wellness-copy { padding: 23px 20px; }
+        .trip-grid { grid-template-columns: 1fr; }
+        .trip-card { min-height: 0; }
+      }
+
+      @media (max-width: 480px) {
+        .quick-grid { grid-template-columns: 1fr; }
+        .quick-item {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 18px;
+          padding: 14px 17px;
+          text-align: left;
+        }
+        .quick-item + .quick-item {
+          border-top: 1px solid var(--line);
+          border-left: 0;
+        }
+        .quick-label {
+          justify-content: flex-start;
+          min-height: 0;
+          margin: 0;
+          font-size: .875rem;
+          letter-spacing: .045em;
+          text-align: left;
+        }
+        .quick-time {
+          flex: 0 0 auto;
+          font-size: 1.22rem;
+        }
+        .action-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .action-link {
+          min-height: 54px;
+          flex-direction: row;
+          justify-content: flex-start;
+          padding-inline: 14px;
+          font-size: .84rem;
+          text-align: left;
+        }
+        .contact-links { grid-template-columns: 1fr; }
+        .contact-link {
+          padding: 14px 18px;
+          font-size: .9rem;
+          text-align: left;
+        }
+        .contact-link + .contact-link {
+          border-top: 1px solid var(--line);
+          border-left: 0;
+        }
+        .link-button { width: 100%; }
+        .wellness-action { width: 100%; }
+        .safety-actions { grid-template-columns: 1fr 1fr; }
+        .safety-link:last-child { grid-column: 1 / -1; }
+        .feedback-card { align-items: stretch; flex-direction: column; }
+        .feedback-link { width: 100%; }
+      }
+
+      @media (max-width: 430px) {
+        .hero { min-height: 360px; }
+        .hero-content { padding-inline: 18px; }
+        main { padding-inline: 12px; }
+        .details-grid { grid-template-columns: 1fr; }
+      }
+
+      @media (max-width: 360px) {
+        .wellness-price { grid-template-columns: 1fr; }
+        .wellness-price dd { justify-self: start; }
+      }
+
+      @media (min-width: 720px) {
+        body { padding: 24px 0; }
+        .shell { overflow: hidden; border-radius: 28px; box-shadow: 0 24px 80px rgba(16,46,42,.16); }
+        .topbar { top: 24px; }
+        main { padding-inline: 28px; }
+        footer { padding-bottom: 32px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+      }
+
+      @media print {
+        body { padding: 0; background: white; }
+        .shell { width: 100%; box-shadow: none; }
+        .language { display: none; }
+        .action-grid { display: none; }
+        .hero { min-height: 260px; }
+        .link-button { border: 1px solid var(--forest-900); color: var(--forest-900); background: transparent; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hero">
+        <div class="topbar">
+          <div class="brand" aria-label="Hotel Raj">
+            <span class="brand-mark" aria-hidden="true">R</span>
+            <span>HOTEL RAJ</span>
+          </div>
+          <div class="language" aria-label="Výber jazyka">
+            <button type="button" data-language="sk" aria-label="Slovenčina" aria-pressed="true">SK</button>
+            <button type="button" data-language="en" aria-label="English" aria-pressed="false">EN</button>
+            <button type="button" data-language="hu" aria-label="Magyar" aria-pressed="false">HU</button>
+            <button type="button" data-language="pl" aria-label="Polski" aria-pressed="false">PL</button>
+            <button type="button" data-language="de" aria-label="Deutsch" aria-pressed="false">DE</button>
+          </div>
+        </div>
+        <div class="hero-content">
+          <p class="eyebrow" data-i18n="place">Dobšinská Maša · Slovenský raj</p>
+          <h1 data-i18n="welcome">Vitajte v Raji</h1>
+          <p class="intro" data-i18n="intro">Všetko dôležité pre príjemný pobyt nájdete na jednom mieste.</p>
+        </div>
+      </header>
+
+      <main>
+        <div class="lift">
+          <section class="quick-grid" aria-label="Najdôležitejšie časy">
+            <div class="quick-item">
+              <span class="quick-label" data-i18n="checkin">Príchod</span>
+              <span class="quick-time">14:00–20:00</span>
+            </div>
+            <div class="quick-item">
+              <span class="quick-label" data-i18n="checkout">Odchod</span>
+              <span class="quick-time">08:00–10:00</span>
+            </div>
+            <div class="quick-item">
+              <span class="quick-label" data-i18n="breakfast">Raňajky</span>
+              <span class="quick-time">08:00–10:00</span>
+            </div>
+          </section>
+          <nav class="action-grid" aria-label="Rýchle možnosti">
+            <a class="action-link" href="tel:+421911930991">
+              <span class="action-icon" aria-hidden="true">☎</span>
+              <span data-i18n="actionReception">Recepcia</span>
+            </a>
+            <a class="action-link" href="#wellness">
+              <span class="action-icon" aria-hidden="true">♨</span>
+              <span data-i18n="actionWellness">Wellness</span>
+            </a>
+            <a class="action-link" href="https://www.raj.td-coop.eu/jedalny-listok" target="_blank" rel="noopener">
+              <span class="action-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M3 2v7a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a6 6 0 0 0-6 6v3a2 2 0 0 0 2 2h4M21 15v7" />
+                </svg>
+              </span>
+              <span data-i18n="actionMenu">Jedálny lístok</span>
+            </a>
+            <a class="action-link" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Raj+Dob%C5%A1insk%C3%A1+Ma%C5%A1a+73+Dedinky" target="_blank" rel="noopener">
+              <span class="action-icon" aria-hidden="true">⌖</span>
+              <span data-i18n="actionMap">Mapa</span>
+            </a>
+          </nav>
+        </div>
+
+        <section class="section">
+          <h2 class="section-heading" data-i18n="foodTitle">Jedlo a nápoje</h2>
+          <div class="card food-card">
+            <div class="hours-row">
+              <span class="hours-name" data-i18n="restaurant">Reštaurácia</span>
+              <span class="hours-time">13:00–20:00</span>
+            </div>
+            <div class="hours-row">
+              <span class="hours-name" data-i18n="bar">Denný bar</span>
+              <span class="hours-time">10:00–21:00</span>
+            </div>
+            <p class="supporting" data-i18n="foodText">Raňajky sa podávajú formou bufetu. Obedy a večere ponúka hotel formou à la carte alebo bufetových stolov.</p>
+            <div class="special">
+              <span class="special-icon" aria-hidden="true">★</span>
+              <div>
+                <strong data-i18n="surpriseTitle">Pozornosť hotela</strong>
+                <p data-i18n="surpriseText">Denne od 15:00 do 17:00 na vás v reštaurácii čaká prekvapenie ako pozornosť hotela.</p>
+              </div>
+            </div>
+            <a class="link-button" href="https://www.raj.td-coop.eu/jedalny-listok" target="_blank" rel="noopener">
+              <span data-i18n="menu">Otvoriť jedálny lístok</span><span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="section" id="wellness">
+          <h2 class="section-heading" data-i18n="wellnessTitle">Wellness Raj</h2>
+          <div class="wellness-card">
+            <div class="wellness-stat" aria-hidden="true">
+              <strong>3 h</strong>
+              <span data-i18n="wellnessEntry">wellness vstup</span>
+            </div>
+            <div class="wellness-copy">
+              <span class="wellness-badge" data-i18n="wellnessBadge">Cenník wellness</span>
+              <h3 data-i18n="wellnessHeading">Tri hodiny oddychu</h3>
+              <dl class="wellness-prices">
+                <div class="wellness-price">
+                  <dt data-i18n="wellnessGuests">Ubytovaní hostia</dt>
+                  <dd>20 € <small>/ 3 h</small></dd>
+                </div>
+                <div class="wellness-price">
+                  <dt data-i18n="wellnessVisitors">Neubytovaní návštevníci</dt>
+                  <dd>30 € <small>/ 3 h</small></dd>
+                </div>
+              </dl>
+              <p data-i18n="wellnessText">Wellness vstup nie je automaticky zahrnutý v každom pobyte. Podmienky svojej rezervácie a čas vstupu si, prosím, overte na recepcii.</p>
+              <div class="wellness-actions">
+                <a class="wellness-action primary" href="tel:+421911930991" data-i18n="wellnessCall">Dohodnúť vstup</a>
+                <a class="wellness-action" href="mailto:reception@hotelraj.eu" data-i18n="wellnessEmail">Napísať recepcii</a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-heading" data-i18n="stayTitle">Počas pobytu</h2>
+          <div class="details-grid">
+            <article class="card detail">
+              <div class="detail-icon" aria-hidden="true">⌁</div>
+              <h3>Wi‑Fi</h3>
+              <p data-i18n="wifi">Bezplatné Wi‑Fi je dostupné vo všetkých priestoroch hotela.</p>
+              <div class="credential">
+                <span data-i18n="wifiPassword">Heslo</span>
+                <strong data-i18n="wifiAccess">hotelraj2023</strong>
+              </div>
+            </article>
+            <article class="card detail">
+              <div class="detail-icon" aria-hidden="true">P</div>
+              <h3 data-i18n="parkingTitle">Parkovanie</h3>
+              <p data-i18n="parking">Pre hostí je pri hoteli k dispozícii bezplatné súkromné parkovanie.</p>
+            </article>
+            <article class="card detail">
+              <div class="detail-icon" aria-hidden="true">♟</div>
+              <h3 data-i18n="gamesTitle">Spoločenské hry</h3>
+              <p data-i18n="games">Spoločenské hry si môžete bezplatne zapožičať na izbu.</p>
+            </article>
+            <article class="card detail">
+              <div class="detail-icon" aria-hidden="true">◎</div>
+              <h3 data-i18n="outdoorTitle">Aktivity</h3>
+              <p data-i18n="outdoor">Turistika, cyklistika, vodné športy a sezónne aktivity sú dostupné v okolí.</p>
+            </article>
+          </div>
+          <div class="notice">
+            <span aria-hidden="true">◷</span>
+            <div>
+              <strong data-i18n="flexTitle">Skorší príchod alebo neskorší odchod</strong>
+              <p data-i18n="flexText">Je možný podľa dostupnosti za poplatok 20 €. Dohodnite sa, prosím, s recepciou.</p>
+            </div>
+          </div>
+          <div class="guest-details">
+            <details>
+              <summary data-i18n="roomInfoTitle">Izba a služby</summary>
+              <p data-i18n="roomInfoText">Izby majú vlastnú kúpeľňu, TV a chladničku. Ak potrebujete ďalšie uteráky alebo pomoc na izbe, kontaktujte recepciu.</p>
+            </details>
+            <details>
+              <summary data-i18n="familyInfoTitle">Pre rodiny a pobyty so psom</summary>
+              <p data-i18n="familyInfoText">Detskú postieľku pre deti do 3 rokov poskytuje hotel bezplatne. Pobyt so psom je možný iba vo vybraných izbách po dohode s recepciou.</p>
+            </details>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2 class="section-heading" data-i18n="tripsTitle">Objavte okolie</h2>
+          <p class="section-intro" data-i18n="tripsIntro">Tri tipy na výlet priamo zo srdca Slovenského raja. Pred odchodom vždy skontrolujte počasie a sezónnu prevádzku.</p>
+          <div class="trip-grid">
+            <article class="card trip-card">
+              <span class="trip-number" aria-hidden="true">01</span>
+              <span class="trip-label" data-i18n="tripGeravyLabel">Výhľad a turistika</span>
+              <h3>Geravy</h3>
+              <p data-i18n="tripGeravyText">Výlet z Dediniek na planinu Geravy. Chodníky aj lanovka sú sezónne; pred odchodom si overte prevádzku a počasie.</p>
+              <a class="trip-link" href="https://www.lanovkanageravy.sk/" target="_blank" rel="noopener"><span data-i18n="openTip">Otvoriť tip</span> ↗</a>
+            </article>
+            <article class="card trip-card">
+              <span class="trip-number" aria-hidden="true">02</span>
+              <span class="trip-label" data-i18n="tripCaveLabel">Rodinný výlet</span>
+              <h3 data-i18n="tripCaveTitle">Dobšinská ľadová jaskyňa</h3>
+              <p data-i18n="tripCaveText">Svetoznáma ľadová jaskyňa. Prevádzka je sezónna a k vstupu vedie približne 25-minútový výstup.</p>
+              <a class="trip-link" href="https://www.google.com/maps/search/?api=1&amp;query=Dob%C5%A1insk%C3%A1+%C4%BEadov%C3%A1+jasky%C5%88a" target="_blank" rel="noopener"><span data-i18n="navigate">Navigovať</span> ↗</a>
+            </article>
+            <article class="card trip-card">
+              <span class="trip-number" aria-hidden="true">03</span>
+              <span class="trip-label" data-i18n="tripLakeLabel">Oddych pri vode</span>
+              <h3>Palcmanská Maša</h3>
+              <p data-i18n="tripLakeText">Pokojná prechádzka, výhľady na vodnú nádrž a v sezóne vodné aktivity priamo v okolí Dediniek.</p>
+              <a class="trip-link" href="https://www.google.com/maps/search/?api=1&amp;query=Palcmansk%C3%A1+Ma%C5%A1a+Dedinky" target="_blank" rel="noopener"><span data-i18n="navigate">Navigovať</span> ↗</a>
+            </article>
+          </div>
+          <a class="conditions-link" href="https://hzs.sk/category/podmienky-a-vystrahy/" target="_blank" rel="noopener">
+            <span data-i18n="conditions">Skontrolovať horské podmienky a výstrahy</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </section>
+
+        <section class="section">
+          <h2 class="section-heading" data-i18n="contactTitle">Recepcia a kontakt</h2>
+          <div class="card contact-card">
+            <div class="address">
+              <strong>Hotel Raj</strong>
+              <p>Dobšinská Maša 73<br />049 73 Dedinky, <span data-i18n="country">Slovensko</span></p>
+              <div class="contact-details">
+                <a href="tel:+421911930991">+421 911 930 991</a>
+                <a href="mailto:reception@hotelraj.eu">reception@hotelraj.eu</a>
+              </div>
+            </div>
+            <div class="contact-links">
+              <a class="contact-link" href="tel:+421911930991" data-i18n="call">Zavolať</a>
+              <a class="contact-link" href="mailto:reception@hotelraj.eu" data-i18n="email">Napísať e‑mail</a>
+              <a class="contact-link" href="https://www.google.com/maps/search/?api=1&amp;query=Hotel+Raj+Dob%C5%A1insk%C3%A1+Ma%C5%A1a+73+Dedinky" target="_blank" rel="noopener" data-i18n="map">Otvoriť mapu</a>
+            </div>
+          </div>
+          <div class="safety-card">
+            <h3 data-i18n="safetyTitle">Bezpečne v horách</h3>
+            <p data-i18n="safetyText">Pred túrou skontrolujte počasie a aktuálne výstrahy. V menej naliehavých situáciách najprv kontaktujte recepciu.</p>
+            <div class="safety-actions">
+              <a class="safety-link" href="tel:112"><span data-i18n="emergencyLabel">Tiesňová linka</span><strong>112</strong></a>
+              <a class="safety-link" href="tel:18300"><span data-i18n="mountainRescue">Horská záchranná služba</span><strong>18 300</strong></a>
+              <a class="safety-link" href="https://hzs.sk/category/podmienky-a-vystrahy/" target="_blank" rel="noopener" data-i18n="alerts">Aktuálne výstrahy HZS</a>
+            </div>
+          </div>
+          <div class="feedback-card">
+            <div>
+              <strong data-i18n="feedbackTitle">Bolo všetko v poriadku?</strong>
+              <p data-i18n="feedbackText">Vaša spätná väzba nám pomáha zlepšovať pobyt ďalších hostí.</p>
+            </div>
+            <a class="feedback-link" href="mailto:reception@hotelraj.eu?subject=Sp%C3%A4tn%C3%A1%20v%C3%A4zba%20-%20Hotel%20Raj" data-i18n="feedbackButton">Napísať hotelu</a>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <span data-i18n="footerText">Ďalšie informácie nájdete na</span>
+        <a href="https://www.raj.td-coop.eu/" target="_blank" rel="noopener" data-i18n="officialSite">oficiálnej stránke hotela</a>.
+        <br /><span data-i18n="photo">Foto: Hotel Raj</span>
+      </footer>
+    </div>
+
+    <script>
+      const copy = {
+        sk: {
+          pageTitle: "Hotel Raj – Informácie pre hostí",
+          pageDescription: "Praktické informácie pre hostí Hotela Raj: časy, wellness, reštaurácia, výlety a kontakt.",
+          place: "Dobšinská Maša · Slovenský raj",
+          welcome: "Vitajte v Raji",
+          intro: "Všetko dôležité pre príjemný pobyt nájdete na jednom mieste.",
+          checkin: "Príchod", checkout: "Odchod", breakfast: "Raňajky",
+          actionsLabel: "Rýchle možnosti", actionReception: "Recepcia", actionWellness: "Wellness", actionMenu: "Jedálny lístok", actionMap: "Mapa",
+          foodTitle: "Jedlo a nápoje", restaurant: "Reštaurácia", bar: "Denný bar",
+          foodText: "Raňajky sa podávajú formou bufetu. Obedy a večere ponúka hotel formou à la carte alebo bufetových stolov.",
+          surpriseTitle: "Pozornosť hotela",
+          surpriseText: "Denne od 15:00 do 17:00 na vás v reštaurácii čaká prekvapenie ako pozornosť hotela.",
+          menu: "Otvoriť jedálny lístok",
+          wellnessTitle: "Wellness Raj", wellnessEntry: "wellness vstup", wellnessBadge: "Cenník wellness",
+          wellnessHeading: "Tri hodiny oddychu", wellnessGuests: "Ubytovaní hostia", wellnessVisitors: "Neubytovaní návštevníci",
+          wellnessText: "Wellness vstup nie je automaticky zahrnutý v každom pobyte. Podmienky svojej rezervácie a čas vstupu si, prosím, overte na recepcii.",
+          wellnessCall: "Dohodnúť vstup", wellnessEmail: "Napísať recepcii",
+          stayTitle: "Počas pobytu",
+          wifi: "Bezplatné Wi‑Fi je dostupné vo všetkých priestoroch hotela.",
+          wifiPassword: "Heslo",
+          wifiAccess: "hotelraj2023",
+          parkingTitle: "Parkovanie", parking: "Pre hostí je pri hoteli k dispozícii bezplatné súkromné parkovanie.",
+          gamesTitle: "Spoločenské hry", games: "Spoločenské hry si môžete bezplatne zapožičať na izbu.",
+          outdoorTitle: "Aktivity", outdoor: "Turistika, cyklistika, vodné športy a sezónne aktivity sú dostupné v okolí.",
+          flexTitle: "Skorší príchod alebo neskorší odchod",
+          flexText: "Je možný podľa dostupnosti za poplatok 20 €. Dohodnite sa, prosím, s recepciou.",
+          roomInfoTitle: "Izba a služby",
+          roomInfoText: "Izby majú vlastnú kúpeľňu, TV a chladničku. Ak potrebujete ďalšie uteráky alebo pomoc na izbe, kontaktujte recepciu.",
+          familyInfoTitle: "Pre rodiny a pobyty so psom",
+          familyInfoText: "Detskú postieľku pre deti do 3 rokov poskytuje hotel bezplatne. Pobyt so psom je možný iba vo vybraných izbách po dohode s recepciou.",
+          tripsTitle: "Objavte okolie", tripsIntro: "Tri tipy na výlet priamo zo srdca Slovenského raja. Pred odchodom vždy skontrolujte počasie a sezónnu prevádzku.",
+          tripGeravyLabel: "Výhľad a turistika", tripGeravyText: "Výlet z Dediniek na planinu Geravy. Chodníky aj lanovka sú sezónne; pred odchodom si overte prevádzku a počasie.",
+          tripCaveLabel: "Rodinný výlet", tripCaveTitle: "Dobšinská ľadová jaskyňa", tripCaveText: "Svetoznáma ľadová jaskyňa. Prevádzka je sezónna a k vstupu vedie približne 25-minútový výstup.",
+          tripLakeLabel: "Oddych pri vode", tripLakeText: "Pokojná prechádzka, výhľady na vodnú nádrž a v sezóne vodné aktivity priamo v okolí Dediniek.",
+          openTip: "Otvoriť tip", navigate: "Navigovať", conditions: "Skontrolovať horské podmienky a výstrahy",
+          contactTitle: "Recepcia a kontakt", call: "Zavolať", email: "Napísať e‑mail", map: "Otvoriť mapu",
+          emergencyTitle: "Tiesňová linka: 112", emergencyText: " · V menej naliehavých situáciách najprv kontaktujte recepciu.",
+          safetyTitle: "Bezpečne v horách", safetyText: "Pred túrou skontrolujte počasie a aktuálne výstrahy. V menej naliehavých situáciách najprv kontaktujte recepciu.",
+          emergencyLabel: "Tiesňová linka", mountainRescue: "Horská záchranná služba", alerts: "Aktuálne výstrahy HZS",
+          feedbackTitle: "Bolo všetko v poriadku?", feedbackText: "Vaša spätná väzba nám pomáha zlepšovať pobyt ďalších hostí.", feedbackButton: "Napísať hotelu",
+          footerText: "Ďalšie informácie nájdete na", officialSite: "oficiálnej stránke hotela", photo: "Foto: Hotel Raj",
+          country: "Slovensko", languageLabel: "Výber jazyka", quickLabel: "Najdôležitejšie časy"
+        },
+        en: {
+          pageTitle: "Hotel Raj – Guest information",
+          pageDescription: "Practical information for Hotel Raj guests: essential times, wellness, dining, local trips and contact details.",
+          place: "Dobšinská Maša · Slovak Paradise",
+          welcome: "Welcome to Hotel Raj",
+          intro: "Everything you need for a comfortable stay, all in one place.",
+          checkin: "Check-in", checkout: "Check-out", breakfast: "Breakfast",
+          actionsLabel: "Quick actions", actionReception: "Reception", actionWellness: "Wellness", actionMenu: "Menu", actionMap: "Map",
+          foodTitle: "Food & drinks", restaurant: "Restaurant", bar: "Bar",
+          foodText: "Breakfast is served buffet-style. Lunch and dinner are offered à la carte or as buffet meals.",
+          surpriseTitle: "A treat from the hotel",
+          surpriseText: "A surprise awaits you in the restaurant every day from 15:00 to 17:00, with our compliments.",
+          menu: "Open the menu",
+          wellnessTitle: "Wellness Raj", wellnessEntry: "wellness access", wellnessBadge: "Wellness prices",
+          wellnessHeading: "Three hours of relaxation", wellnessGuests: "Hotel guests", wellnessVisitors: "Day visitors",
+          wellnessText: "Wellness access is not automatically included with every stay. Please confirm your booking conditions and preferred entry time with reception.",
+          wellnessCall: "Arrange entry", wellnessEmail: "E-mail reception",
+          stayTitle: "During your stay",
+          wifi: "Complimentary Wi‑Fi is available throughout the hotel.",
+          wifiPassword: "Password",
+          wifiAccess: "hotelraj2023",
+          parkingTitle: "Parking", parking: "Complimentary private parking is available next to the hotel.",
+          gamesTitle: "Board games", games: "Board games can be borrowed for your room free of charge.",
+          outdoorTitle: "Activities", outdoor: "Hiking, cycling, water sports and seasonal activities are available nearby.",
+          flexTitle: "Early check-in or late check-out",
+          flexText: "Available upon request and subject to availability for a €20 fee. Please arrange it with reception.",
+          roomInfoTitle: "Your room and services",
+          roomInfoText: "Rooms have a private bathroom, TV and refrigerator. For extra towels or assistance in your room, please contact reception.",
+          familyInfoTitle: "Families and stays with dogs",
+          familyInfoText: "A cot is provided free of charge for children under 3. Dogs are welcome only in selected rooms by prior arrangement with reception.",
+          tripsTitle: "Discover the area", tripsIntro: "Three ideas for exploring the heart of Slovak Paradise. Always check the weather and seasonal operation before setting out.",
+          tripGeravyLabel: "Views and hiking", tripGeravyText: "A trip from Dedinky to the Geravy plateau. Trails and the chairlift operate seasonally; check conditions before setting out.",
+          tripCaveLabel: "Family trip", tripCaveTitle: "Dobšinská Ice Cave", tripCaveText: "A world-famous ice cave. It operates seasonally, and the entrance is reached by an uphill walk of about 25 minutes.",
+          tripLakeLabel: "Relax by the water", tripLakeText: "A peaceful walk, reservoir views and seasonal water activities in the immediate Dedinky area.",
+          openTip: "Open details", navigate: "Navigate", conditions: "Check mountain conditions and alerts",
+          contactTitle: "Reception & contact", call: "Call", email: "Send e-mail", map: "Open map",
+          emergencyTitle: "Emergency number: 112", emergencyText: " · For non-urgent matters, please contact reception first.",
+          safetyTitle: "Stay safe in the mountains", safetyText: "Check the weather and current alerts before hiking. For non-urgent matters, please contact reception first.",
+          emergencyLabel: "Emergency number", mountainRescue: "Mountain Rescue Service", alerts: "Current mountain alerts",
+          feedbackTitle: "Was everything to your satisfaction?", feedbackText: "Your feedback helps us improve the stay of future guests.", feedbackButton: "Write to the hotel",
+          footerText: "Find more information on the", officialSite: "hotel’s official website", photo: "Photo: Hotel Raj",
+          country: "Slovakia", languageLabel: "Language selection", quickLabel: "Essential times"
+        },
+        hu: {
+          pageTitle: "Hotel Raj – Vendéginformációk",
+          pageDescription: "Hasznos információk a Hotel Raj vendégeinek: időpontok, wellness, étkezés, kirándulások és elérhetőségek.",
+          place: "Dobšinská Maša · Szlovák Paradicsom",
+          welcome: "Üdvözöljük a Hotel Rajban",
+          intro: "Minden fontos információ a kellemes tartózkodáshoz egy helyen.",
+          checkin: "Érkezés", checkout: "Távozás", breakfast: "Reggeli",
+          actionsLabel: "Gyorsműveletek", actionReception: "Recepció", actionWellness: "Wellness", actionMenu: "Étlap", actionMap: "Térkép",
+          foodTitle: "Ételek és italok", restaurant: "Étterem", bar: "Bár",
+          foodText: "A reggelit büférendszerben szolgáljuk fel. Ebéd és vacsora à la carte vagy büfé formájában érhető el.",
+          surpriseTitle: "A szálloda ajándéka",
+          surpriseText: "15:00 és 17:00 között meglepetés várja Önt az étteremben, a szálloda ajándékaként.",
+          menu: "Étlap megnyitása",
+          wellnessTitle: "Wellness Raj", wellnessEntry: "wellnessbelépő", wellnessBadge: "Wellness árak",
+          wellnessHeading: "Három óra kikapcsolódás", wellnessGuests: "Szállóvendégek", wellnessVisitors: "Külső vendégek",
+          wellnessText: "A wellnessbelépő nem minden tartózkodás árában szerepel automatikusan. Kérjük, foglalása feltételeit és a belépés időpontját egyeztesse a recepción.",
+          wellnessCall: "Időpont egyeztetése", wellnessEmail: "E-mail a recepciónak",
+          stayTitle: "Tartózkodása alatt",
+          wifi: "Ingyenes Wi‑Fi érhető el a szálloda egész területén.",
+          wifiPassword: "Wi‑Fi jelszó",
+          wifiAccess: "hotelraj2023",
+          parkingTitle: "Parkolás", parking: "A szálloda mellett ingyenes, privát parkoló áll vendégeink rendelkezésére.",
+          gamesTitle: "Társasjátékok", games: "A társasjátékok díjmentesen kölcsönözhetők a szobába.",
+          outdoorTitle: "Programok", outdoor: "Túrázás, kerékpározás, vízi sportok és szezonális programok érhetők el a közelben.",
+          flexTitle: "Korai bejelentkezés vagy késői kijelentkezés",
+          flexText: "Elérhetőségtől függően, 20 € díj ellenében lehetséges. Kérjük, egyeztessen a recepcióval.",
+          roomInfoTitle: "Szoba és szolgáltatások",
+          roomInfoText: "A szobák saját fürdőszobával, TV-vel és hűtőszekrénnyel rendelkeznek. További törölközőért vagy segítségért forduljon a recepcióhoz.",
+          familyInfoTitle: "Családok és kutyával érkezők",
+          familyInfoText: "A 3 év alatti gyermekek számára a kiságy ingyenes. Kutyával csak kijelölt szobákban, a recepcióval előre egyeztetve lehet megszállni.",
+          tripsTitle: "Fedezze fel a környéket", tripsIntro: "Három kirándulási tipp a Szlovák Paradicsom szívéből. Indulás előtt mindig ellenőrizze az időjárást és a szezonális nyitvatartást.",
+          tripGeravyLabel: "Kilátás és túrázás", tripGeravyText: "Kirándulás Dedinkyből a Geravy-fennsíkra. A túraútvonalak és a felvonó szezonálisan működnek; indulás előtt ellenőrizze a feltételeket.",
+          tripCaveLabel: "Családi kirándulás", tripCaveTitle: "Dobsinai-jégbarlang", tripCaveText: "Világhírű jégbarlang. Szezonálisan látogatható, a bejárathoz körülbelül 25 perces emelkedő vezet.",
+          tripLakeLabel: "Pihenés a víznél", tripLakeText: "Nyugodt séta, kilátás a víztározóra és szezonális vízi programok Dedinky közvetlen közelében.",
+          openTip: "Részletek", navigate: "Navigáció", conditions: "Hegyi körülmények és riasztások ellenőrzése",
+          contactTitle: "Recepció és elérhetőség", call: "Hívás", email: "E-mail küldése", map: "Térkép megnyitása",
+          emergencyTitle: "Segélyhívó: 112", emergencyText: " · Nem sürgős esetben először a recepciót hívja.",
+          safetyTitle: "Biztonságban a hegyekben", safetyText: "Túrázás előtt ellenőrizze az időjárást és az aktuális riasztásokat. Nem sürgős esetben először a recepciót hívja.",
+          emergencyLabel: "Segélyhívó", mountainRescue: "Hegyi mentőszolgálat", alerts: "Aktuális hegyi riasztások",
+          feedbackTitle: "Minden rendben volt?", feedbackText: "Visszajelzése segít abban, hogy tovább javítsuk vendégeink tartózkodását.", feedbackButton: "Írjon a szállodának",
+          footerText: "További információk a", officialSite: "szálloda hivatalos weboldalán", photo: "Fotó: Hotel Raj",
+          country: "Szlovákia", languageLabel: "Nyelvválasztás", quickLabel: "Legfontosabb időpontok"
+        },
+        pl: {
+          pageTitle: "Hotel Raj – Informacje dla gości",
+          pageDescription: "Praktyczne informacje dla gości Hotelu Raj: godziny, wellness, gastronomia, wycieczki i kontakt.",
+          place: "Dobšinská Maša · Słowacki Raj",
+          welcome: "Witamy w Hotelu Raj",
+          intro: "Wszystkie najważniejsze informacje potrzebne podczas pobytu w jednym miejscu.",
+          checkin: "Zameldowanie", checkout: "Wymeldowanie", breakfast: "Śniadanie",
+          actionsLabel: "Szybkie opcje", actionReception: "Recepcja", actionWellness: "Wellness", actionMenu: "Menu", actionMap: "Mapa",
+          foodTitle: "Jedzenie i napoje", restaurant: "Restauracja", bar: "Bar dzienny",
+          foodText: "Śniadanie podawane jest w formie bufetu. Obiady i kolacje są dostępne à la carte lub w formie bufetu.",
+          surpriseTitle: "Upominek od hotelu",
+          surpriseText: "Codziennie między 15:00 a 17:00 w restauracji czeka na Państwa niespodzianka – upominek od hotelu.",
+          menu: "Otwórz menu",
+          wellnessTitle: "Wellness Raj", wellnessEntry: "wstęp do wellness", wellnessBadge: "Cennik wellness",
+          wellnessHeading: "Trzy godziny relaksu", wellnessGuests: "Goście hotelowi", wellnessVisitors: "Goście z zewnątrz",
+          wellnessText: "Wstęp do wellness nie jest automatycznie wliczony w cenę każdego pobytu. Prosimy potwierdzić warunki rezerwacji oraz godzinę wejścia w recepcji.",
+          wellnessCall: "Uzgodnij wejście", wellnessEmail: "Napisz do recepcji",
+          stayTitle: "Podczas pobytu",
+          wifi: "Bezpłatne Wi‑Fi jest dostępne na terenie całego hotelu.",
+          wifiPassword: "Hasło Wi‑Fi",
+          wifiAccess: "hotelraj2023",
+          parkingTitle: "Parking", parking: "Przy hotelu dostępny jest bezpłatny prywatny parking dla gości.",
+          gamesTitle: "Gry planszowe", games: "Gry planszowe można bezpłatnie wypożyczyć do pokoju.",
+          outdoorTitle: "Atrakcje", outdoor: "W pobliżu dostępne są piesze wycieczki, jazda na rowerze, sporty wodne i atrakcje sezonowe.",
+          flexTitle: "Wcześniejsze zameldowanie lub późniejsze wymeldowanie",
+          flexText: "Możliwe w zależności od dostępności za opłatą 20 €. Prosimy uzgodnić to z recepcją.",
+          roomInfoTitle: "Pokój i usługi",
+          roomInfoText: "Pokoje mają prywatną łazienkę, telewizor i lodówkę. Jeśli potrzebują Państwo dodatkowych ręczników lub pomocy w pokoju, prosimy skontaktować się z recepcją.",
+          familyInfoTitle: "Dla rodzin i pobytów z psem",
+          familyInfoText: "Łóżeczko dla dzieci do 3 lat jest bezpłatne. Pobyt z psem jest możliwy wyłącznie w wybranych pokojach po wcześniejszym uzgodnieniu z recepcją.",
+          tripsTitle: "Odkryj okolicę", tripsIntro: "Trzy propozycje wycieczek w sercu Słowackiego Raju. Przed wyjściem zawsze sprawdź pogodę i sezonową dostępność atrakcji.",
+          tripGeravyLabel: "Widoki i wędrówki", tripGeravyText: "Wycieczka z Dediniek na płaskowyż Geravy. Szlaki i kolej krzesełkowa działają sezonowo; przed wyjściem sprawdź warunki.",
+          tripCaveLabel: "Wycieczka rodzinna", tripCaveTitle: "Dobszyńska Jaskinia Lodowa", tripCaveText: "Światowej sławy jaskinia lodowa. Jest czynna sezonowo, a dojście do wejścia zajmuje około 25 minut pod górę.",
+          tripLakeLabel: "Odpoczynek nad wodą", tripLakeText: "Spokojny spacer, widoki na zbiornik oraz sezonowe atrakcje wodne w bezpośredniej okolicy Dediniek.",
+          openTip: "Otwórz informacje", navigate: "Nawiguj", conditions: "Sprawdź warunki i ostrzeżenia górskie",
+          contactTitle: "Recepcja i kontakt", call: "Zadzwoń", email: "Wyślij e-mail", map: "Otwórz mapę",
+          emergencyTitle: "Numer alarmowy: 112", emergencyText: " · W sprawach niepilnych prosimy najpierw skontaktować się z recepcją.",
+          safetyTitle: "Bezpiecznie w górach", safetyText: "Przed wyjściem sprawdź pogodę i aktualne ostrzeżenia. W sprawach niepilnych prosimy najpierw skontaktować się z recepcją.",
+          emergencyLabel: "Numer alarmowy", mountainRescue: "Górskie Pogotowie Ratunkowe", alerts: "Aktualne ostrzeżenia górskie",
+          feedbackTitle: "Czy wszystko było w porządku?", feedbackText: "Państwa opinia pomaga nam ulepszać pobyt kolejnych gości.", feedbackButton: "Napisz do hotelu",
+          footerText: "Więcej informacji znajdą Państwo na", officialSite: "oficjalnej stronie hotelu", photo: "Zdjęcie: Hotel Raj",
+          country: "Słowacja", languageLabel: "Wybór języka", quickLabel: "Najważniejsze godziny"
+        },
+        de: {
+          pageTitle: "Hotel Raj – Gästeinformationen",
+          pageDescription: "Praktische Informationen für Gäste des Hotel Raj: Zeiten, Wellness, Gastronomie, Ausflüge und Kontakt.",
+          place: "Dobšinská Maša · Slowakisches Paradies",
+          welcome: "Willkommen im Hotel Raj",
+          intro: "Alle wichtigen Informationen für einen angenehmen Aufenthalt auf einen Blick.",
+          checkin: "Anreise", checkout: "Abreise", breakfast: "Frühstück",
+          actionsLabel: "Schnellzugriff", actionReception: "Rezeption", actionWellness: "Wellness", actionMenu: "Speisekarte", actionMap: "Karte",
+          foodTitle: "Essen und Getränke", restaurant: "Restaurant", bar: "Bar",
+          foodText: "Das Frühstück wird als Buffet serviert. Mittag- und Abendessen werden à la carte oder als Buffet angeboten.",
+          surpriseTitle: "Eine Aufmerksamkeit des Hauses",
+          surpriseText: "Zwischen 15:00 und 17:00 erwartet Sie im Restaurant eine kleine Überraschung als Aufmerksamkeit des Hauses.",
+          menu: "Speisekarte öffnen",
+          wellnessTitle: "Wellness Raj", wellnessEntry: "Wellnesseintritt", wellnessBadge: "Wellnesspreise",
+          wellnessHeading: "Drei Stunden Erholung", wellnessGuests: "Hotelgäste", wellnessVisitors: "Externe Gäste",
+          wellnessText: "Der Wellnesseintritt ist nicht automatisch bei jedem Aufenthalt inklusive. Bitte bestätigen Sie Ihre Buchungsbedingungen und die gewünschte Eintrittszeit an der Rezeption.",
+          wellnessCall: "Eintritt vereinbaren", wellnessEmail: "E-Mail an die Rezeption",
+          stayTitle: "Während Ihres Aufenthalts",
+          wifi: "Kostenloses WLAN steht im gesamten Hotel zur Verfügung.",
+          wifiPassword: "WLAN-Passwort",
+          wifiAccess: "hotelraj2023",
+          parkingTitle: "Parken", parking: "Kostenlose Privatparkplätze stehen direkt am Hotel zur Verfügung.",
+          gamesTitle: "Brettspiele", games: "Brettspiele können kostenlos für das Zimmer ausgeliehen werden.",
+          outdoorTitle: "Aktivitäten", outdoor: "Wandern, Radfahren, Wassersport und saisonale Aktivitäten sind in der Umgebung möglich.",
+          flexTitle: "Frühere Anreise oder spätere Abreise",
+          flexText: "Je nach Verfügbarkeit gegen eine Gebühr von 20 €. Bitte vereinbaren Sie dies mit der Rezeption.",
+          roomInfoTitle: "Zimmer und Service",
+          roomInfoText: "Die Zimmer verfügen über ein eigenes Bad, TV und Kühlschrank. Für zusätzliche Handtücher oder Hilfe im Zimmer wenden Sie sich bitte an die Rezeption.",
+          familyInfoTitle: "Familien und Aufenthalte mit Hund",
+          familyInfoText: "Ein Babybett für Kinder unter 3 Jahren ist kostenlos. Hunde sind nur in ausgewählten Zimmern und nach vorheriger Absprache mit der Rezeption erlaubt.",
+          tripsTitle: "Entdecken Sie die Umgebung", tripsIntro: "Drei Ausflugstipps mitten im Slowakischen Paradies. Prüfen Sie vor dem Aufbruch immer das Wetter und den saisonalen Betrieb.",
+          tripGeravyLabel: "Aussicht und Wandern", tripGeravyText: "Ein Ausflug von Dedinky auf die Geravy-Hochebene. Wanderwege und Sessellift sind saisonabhängig; prüfen Sie vorab die Bedingungen.",
+          tripCaveLabel: "Familienausflug", tripCaveTitle: "Dobschauer Eishöhle", tripCaveText: "Eine weltberühmte Eishöhle. Sie ist saisonal geöffnet; zum Eingang führt ein etwa 25-minütiger Anstieg.",
+          tripLakeLabel: "Erholung am Wasser", tripLakeText: "Ein ruhiger Spaziergang, Ausblicke auf den Stausee und saisonale Wasseraktivitäten in unmittelbarer Nähe von Dedinky.",
+          openTip: "Details öffnen", navigate: "Navigieren", conditions: "Bedingungen und Warnungen für die Berge prüfen",
+          contactTitle: "Rezeption und Kontakt", call: "Anrufen", email: "E-Mail senden", map: "Karte öffnen",
+          emergencyTitle: "Notruf: 112", emergencyText: " · In weniger dringenden Fällen wenden Sie sich bitte zuerst an die Rezeption.",
+          safetyTitle: "Sicher in den Bergen", safetyText: "Prüfen Sie vor einer Wanderung das Wetter und aktuelle Warnungen. In weniger dringenden Fällen wenden Sie sich bitte zuerst an die Rezeption.",
+          emergencyLabel: "Notruf", mountainRescue: "Bergrettungsdienst", alerts: "Aktuelle Bergwarnungen",
+          feedbackTitle: "War alles zu Ihrer Zufriedenheit?", feedbackText: "Ihr Feedback hilft uns, den Aufenthalt zukünftiger Gäste weiter zu verbessern.", feedbackButton: "Dem Hotel schreiben",
+          footerText: "Weitere Informationen finden Sie auf der", officialSite: "offiziellen Hotelwebseite", photo: "Foto: Hotel Raj",
+          country: "Slowakei", languageLabel: "Sprachauswahl", quickLabel: "Wichtige Zeiten"
+        }
+      };
+
+      function setLanguage(language) {
+        const selected = copy[language] ? language : "sk";
+        document.documentElement.lang = selected;
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+          element.textContent = copy[selected][element.dataset.i18n];
+        });
+        document.querySelectorAll("[data-language]").forEach((button) => {
+          button.setAttribute("aria-pressed", String(button.dataset.language === selected));
+        });
+        document.querySelector(".language").setAttribute("aria-label", copy[selected].languageLabel);
+        document.querySelector(".quick-grid").setAttribute("aria-label", copy[selected].quickLabel);
+        document.querySelector(".action-grid").setAttribute("aria-label", copy[selected].actionsLabel);
+        document.title = copy[selected].pageTitle;
+        document.querySelector('meta[name="description"]').setAttribute("content", copy[selected].pageDescription);
+        try { localStorage.setItem("hotel-raj-language", selected); } catch (_) {}
+      }
+
+      document.querySelectorAll("[data-language]").forEach((button) => {
+        button.addEventListener("click", () => setLanguage(button.dataset.language));
+      });
+
+      let savedLanguage;
+      try { savedLanguage = localStorage.getItem("hotel-raj-language"); } catch (_) {}
+      const supportedLanguages = ["sk", "en", "hu", "pl", "de"];
+      const browserLanguages = (navigator.languages || [navigator.language || "en"]).map((language) => {
+        const shortCode = language.toLowerCase().slice(0, 2);
+        return shortCode === "cs" ? "sk" : shortCode;
+      });
+      const browserLanguage = browserLanguages.find((language) => supportedLanguages.includes(language)) || "en";
+      setLanguage(savedLanguage || browserLanguage);
+    </script>
+  </body>
+</html>
