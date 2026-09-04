@@ -388,6 +388,16 @@
         font-weight: 750;
       }
       .wellness-copy p { margin: 14px 0 0; color: #dbeae6; }
+      .wellness-copy .wellness-rule {
+        margin-top: 12px;
+        padding: 12px 13px;
+        border: 1px solid rgba(241,199,111,.42);
+        border-radius: 12px;
+        background: rgba(215,168,78,.12);
+        color: #fff4d3;
+        font-size: .88rem;
+        line-height: 1.45;
+      }
       .wellness-actions {
         display: flex;
         flex-wrap: wrap;
@@ -889,23 +899,24 @@
           <h2 class="section-heading" data-i18n="wellnessTitle">Wellness Raj</h2>
           <div class="wellness-card">
             <div class="wellness-stat" aria-hidden="true">
-              <strong>3 h</strong>
+              <strong data-i18n="wellnessDurationShort">2 h</strong>
               <span data-i18n="wellnessEntry">wellness vstup</span>
             </div>
             <div class="wellness-copy">
               <span class="wellness-badge" data-i18n="wellnessBadge">Cenník wellness</span>
-              <h3 data-i18n="wellnessHeading">Tri hodiny oddychu</h3>
+              <h3 data-i18n="wellnessHeading">Dve hodiny oddychu</h3>
               <dl class="wellness-prices">
                 <div class="wellness-price">
-                  <dt data-i18n="wellnessGuests">Ubytovaní hostia</dt>
-                  <dd>20 € <small>/ 3 h</small></dd>
+                  <dt data-i18n="wellnessAdult">Dospelá osoba</dt>
+                  <dd>19 € <small data-i18n="wellnessPriceDuration">/ 2 h</small></dd>
                 </div>
                 <div class="wellness-price">
-                  <dt data-i18n="wellnessVisitors">Neubytovaní návštevníci</dt>
-                  <dd>30 € <small>/ 3 h</small></dd>
+                  <dt data-i18n="wellnessChild">Dieťa do 15 rokov</dt>
+                  <dd>11 € <small data-i18n="wellnessPriceDuration">/ 2 h</small></dd>
                 </div>
               </dl>
-              <p data-i18n="wellnessText">Wellness vstup nie je automaticky zahrnutý v každom pobyte. Podmienky svojej rezervácie a čas vstupu si, prosím, overte na recepcii.</p>
+              <p data-i18n="wellnessText">Vstup do wellness nie je automaticky zahrnutý v každom pobyte. Uvedený cenník platí pre ubytovaných aj neubytovaných hostí. Čas vstupu si, prosím, dohodnite na recepcii.</p>
+              <p class="wellness-rule" data-i18n="wellnessChildrenRule">Deti do 15 rokov môžu wellness využívať iba do 17:00. Fínska sauna nie je určená pre deti.</p>
               <div class="wellness-actions">
                 <a class="wellness-action primary" href="tel:+421911930991" data-i18n="wellnessCall">Dohodnúť vstup</a>
                 <a class="wellness-action" href="mailto:reception@hotelraj.eu" data-i18n="wellnessEmail">Napísať recepcii</a>
@@ -1052,8 +1063,9 @@
           surpriseText: "Denne od 15:00 do 17:00 na vás v reštaurácii čaká prekvapenie ako pozornosť hotela.",
           menu: "Otvoriť jedálny lístok",
           wellnessTitle: "Wellness Raj", wellnessEntry: "wellness vstup", wellnessBadge: "Cenník wellness",
-          wellnessHeading: "Tri hodiny oddychu", wellnessGuests: "Ubytovaní hostia", wellnessVisitors: "Neubytovaní návštevníci",
-          wellnessText: "Wellness vstup nie je automaticky zahrnutý v každom pobyte. Podmienky svojej rezervácie a čas vstupu si, prosím, overte na recepcii.",
+          wellnessHeading: "Dve hodiny oddychu", wellnessAdult: "Dospelá osoba", wellnessChild: "Dieťa do 15 rokov", wellnessDurationShort: "2 h", wellnessPriceDuration: "/ 2 h",
+          wellnessText: "Vstup do wellness nie je automaticky zahrnutý v každom pobyte. Uvedený cenník platí pre ubytovaných aj neubytovaných hostí. Čas vstupu si, prosím, dohodnite na recepcii.",
+          wellnessChildrenRule: "Deti do 15 rokov môžu wellness využívať iba do 17:00. Fínska sauna nie je určená pre deti.",
           wellnessCall: "Dohodnúť vstup", wellnessEmail: "Napísať recepcii",
           stayTitle: "Počas pobytu",
           wifi: "Bezplatné Wi‑Fi je dostupné vo všetkých priestoroch hotela.",
@@ -1095,8 +1107,9 @@
           surpriseText: "A surprise awaits you in the restaurant every day from 15:00 to 17:00, with our compliments.",
           menu: "Open the menu",
           wellnessTitle: "Wellness Raj", wellnessEntry: "wellness access", wellnessBadge: "Wellness prices",
-          wellnessHeading: "Three hours of relaxation", wellnessGuests: "Hotel guests", wellnessVisitors: "Day visitors",
-          wellnessText: "Wellness access is not automatically included with every stay. Please confirm your booking conditions and preferred entry time with reception.",
+          wellnessHeading: "Two hours of relaxation", wellnessAdult: "Adult", wellnessChild: "Child under 15", wellnessDurationShort: "2 hrs", wellnessPriceDuration: "/ 2 hrs",
+          wellnessText: "Wellness access is not automatically included with every stay. The prices shown apply to both hotel guests and day visitors. Please arrange your entry time with reception.",
+          wellnessChildrenRule: "Children under 15 may use the wellness area only until 17:00. The Finnish sauna is not intended for children.",
           wellnessCall: "Arrange entry", wellnessEmail: "E-mail reception",
           stayTitle: "During your stay",
           wifi: "Complimentary Wi‑Fi is available throughout the hotel.",
@@ -1138,8 +1151,9 @@
           surpriseText: "15:00 és 17:00 között meglepetés várja Önt az étteremben, a szálloda ajándékaként.",
           menu: "Étlap megnyitása",
           wellnessTitle: "Wellness Raj", wellnessEntry: "wellnessbelépő", wellnessBadge: "Wellness árak",
-          wellnessHeading: "Három óra kikapcsolódás", wellnessGuests: "Szállóvendégek", wellnessVisitors: "Külső vendégek",
-          wellnessText: "A wellnessbelépő nem minden tartózkodás árában szerepel automatikusan. Kérjük, foglalása feltételeit és a belépés időpontját egyeztesse a recepción.",
+          wellnessHeading: "Két óra kikapcsolódás", wellnessAdult: "Felnőtt", wellnessChild: "15 év alatti gyermek", wellnessDurationShort: "2 óra", wellnessPriceDuration: "/ 2 óra",
+          wellnessText: "A wellnessbelépő nem minden tartózkodás árában szerepel automatikusan. A feltüntetett árak a szállóvendégekre és a külső vendégekre egyaránt érvényesek. Kérjük, a belépés időpontját egyeztesse a recepción.",
+          wellnessChildrenRule: "A 15 év alatti gyermekek csak 17:00 óráig használhatják a wellnessrészleget. A finn szauna gyermekek számára nem használható.",
           wellnessCall: "Időpont egyeztetése", wellnessEmail: "E-mail a recepciónak",
           stayTitle: "Tartózkodása alatt",
           wifi: "Ingyenes Wi‑Fi érhető el a szálloda egész területén.",
@@ -1181,8 +1195,9 @@
           surpriseText: "Codziennie między 15:00 a 17:00 w restauracji czeka na Państwa niespodzianka – upominek od hotelu.",
           menu: "Otwórz menu",
           wellnessTitle: "Wellness Raj", wellnessEntry: "wstęp do wellness", wellnessBadge: "Cennik wellness",
-          wellnessHeading: "Trzy godziny relaksu", wellnessGuests: "Goście hotelowi", wellnessVisitors: "Goście z zewnątrz",
-          wellnessText: "Wstęp do wellness nie jest automatycznie wliczony w cenę każdego pobytu. Prosimy potwierdzić warunki rezerwacji oraz godzinę wejścia w recepcji.",
+          wellnessHeading: "Dwie godziny relaksu", wellnessAdult: "Osoba dorosła", wellnessChild: "Dziecko do 15 lat", wellnessDurationShort: "2 godz.", wellnessPriceDuration: "/ 2 godz.",
+          wellnessText: "Wstęp do strefy wellness nie jest automatycznie wliczony w cenę każdego pobytu. Podany cennik obowiązuje zarówno gości hotelowych, jak i osoby niezakwaterowane. Prosimy uzgodnić godzinę wejścia z recepcją.",
+          wellnessChildrenRule: "Dzieci do 15 lat mogą korzystać ze strefy wellness wyłącznie do godziny 17:00. Sauna fińska nie jest przeznaczona dla dzieci.",
           wellnessCall: "Uzgodnij wejście", wellnessEmail: "Napisz do recepcji",
           stayTitle: "Podczas pobytu",
           wifi: "Bezpłatne Wi‑Fi jest dostępne na terenie całego hotelu.",
@@ -1224,8 +1239,9 @@
           surpriseText: "Zwischen 15:00 und 17:00 erwartet Sie im Restaurant eine kleine Überraschung als Aufmerksamkeit des Hauses.",
           menu: "Speisekarte öffnen",
           wellnessTitle: "Wellness Raj", wellnessEntry: "Wellnesseintritt", wellnessBadge: "Wellnesspreise",
-          wellnessHeading: "Drei Stunden Erholung", wellnessGuests: "Hotelgäste", wellnessVisitors: "Externe Gäste",
-          wellnessText: "Der Wellnesseintritt ist nicht automatisch bei jedem Aufenthalt inklusive. Bitte bestätigen Sie Ihre Buchungsbedingungen und die gewünschte Eintrittszeit an der Rezeption.",
+          wellnessHeading: "Zwei Stunden Erholung", wellnessAdult: "Erwachsene", wellnessChild: "Kind unter 15 Jahren", wellnessDurationShort: "2 Std.", wellnessPriceDuration: "/ 2 Std.",
+          wellnessText: "Der Wellnesseintritt ist nicht automatisch bei jedem Aufenthalt inklusive. Die angegebenen Preise gelten gleichermaßen für Hotelgäste und externe Gäste. Bitte vereinbaren Sie die Eintrittszeit mit der Rezeption.",
+          wellnessChildrenRule: "Kinder unter 15 Jahren dürfen den Wellnessbereich nur bis 17:00 Uhr nutzen. Die finnische Sauna ist nicht für Kinder vorgesehen.",
           wellnessCall: "Eintritt vereinbaren", wellnessEmail: "E-Mail an die Rezeption",
           stayTitle: "Während Ihres Aufenthalts",
           wifi: "Kostenloses WLAN steht im gesamten Hotel zur Verfügung.",
