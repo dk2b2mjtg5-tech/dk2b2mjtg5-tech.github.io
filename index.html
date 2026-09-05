@@ -592,7 +592,7 @@
         text-decoration: none;
       }
       .link-button:focus-visible, .language button:focus-visible, .contact-link:focus-visible,
-      .action-link:focus-visible, .wellness-action:focus-visible, .app-link:focus-visible, .trip-link:focus-visible,
+      .action-link:focus-visible, .wellness-action:focus-visible, .app-link:focus-visible, .rental-action:focus-visible, .trip-link:focus-visible,
       .safety-link:focus-visible, .feedback-link:focus-visible, summary:focus-visible {
         outline: 3px solid var(--gold);
         outline-offset: 3px;
@@ -640,7 +640,36 @@
         text-align: right;
         white-space: nowrap;
       }
-      .detail .charging-info { margin-top: 12px; }
+      .charging-card {
+        margin-top: 14px;
+        padding: 13px;
+        border: 1px solid #abd3e5;
+        border-radius: 13px;
+        background: linear-gradient(145deg, #e9f7fc, #dceff8);
+        color: #123f58;
+      }
+      .charging-heading {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 5px;
+      }
+      .charging-heading span {
+        width: 28px;
+        height: 28px;
+        display: grid;
+        place-items: center;
+        border-radius: 9px;
+        background: #1975a0;
+        color: white;
+        font-size: .94rem;
+      }
+      .charging-heading strong { font-size: .9rem; }
+      .detail .charging-info {
+        margin: 0;
+        color: #35677d;
+        font-size: .875rem;
+      }
       .app-links {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -654,10 +683,10 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        border: 1px solid #bfd1cb;
+        border: 1px solid #9fc9db;
         border-radius: 11px;
-        background: #f1f7f4;
-        color: var(--forest-950);
+        background: rgba(255,255,255,.76);
+        color: #123f58;
         text-decoration: none;
       }
       .app-link svg {
@@ -668,7 +697,7 @@
       .app-link span { min-width: 0; }
       .app-link small,
       .app-link strong { display: block; }
-      .app-link small { color: var(--muted); font-size: .75rem; line-height: 1.1; }
+      .app-link small { color: #527b8d; font-size: .75rem; line-height: 1.1; }
       .app-link strong { margin-top: 2px; font-size: .875rem; line-height: 1.1; }
 
       .notice {
@@ -725,6 +754,108 @@
         max-width: 610px;
         margin: -3px 4px 14px;
         color: var(--muted);
+      }
+      .rental-card {
+        overflow: hidden;
+        border-color: #9fc7b4;
+        background: linear-gradient(145deg, #f8fffb, #e8f5ee);
+        box-shadow: 0 14px 34px rgba(23,63,57,.1);
+      }
+      .rental-head {
+        padding: 20px 21px 18px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 18px;
+        background: linear-gradient(135deg, var(--forest-950), var(--forest-700));
+        color: white;
+      }
+      .rental-kicker {
+        display: block;
+        margin-bottom: 4px;
+        color: #cfe7de;
+        font-size: .76rem;
+        font-weight: 850;
+        letter-spacing: .065em;
+        text-transform: uppercase;
+      }
+      .rental-head h2 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.55rem;
+        line-height: 1.05;
+      }
+      .rental-head p {
+        max-width: 430px;
+        margin: 7px 0 0;
+        color: #e4f1ed;
+        font-size: .9rem;
+      }
+      .rental-place {
+        flex: 0 0 auto;
+        padding: 7px 10px;
+        border: 1px solid rgba(255,255,255,.3);
+        border-radius: 999px;
+        background: rgba(255,255,255,.1);
+        color: white;
+        font-size: .78rem;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+      .rental-table { margin: 0; }
+      .rental-row {
+        display: grid;
+        grid-template-columns: 155px minmax(0, 1fr);
+      }
+      .rental-row + .rental-row { border-top: 1px solid #c7ded3; }
+      .rental-row dt,
+      .rental-row dd {
+        min-width: 0;
+        margin: 0;
+        padding: 14px 18px;
+      }
+      .rental-row dt {
+        color: var(--forest-800);
+        font-size: .86rem;
+        font-weight: 850;
+      }
+      .rental-row dd {
+        border-left: 1px solid #c7ded3;
+        color: #35554d;
+        font-size: .9rem;
+        overflow-wrap: anywhere;
+      }
+      .rental-actions {
+        padding: 13px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        border-top: 1px solid #b9d6c8;
+        background: rgba(255,255,255,.58);
+      }
+      .rental-action {
+        min-width: 0;
+        min-height: 48px;
+        padding: 9px 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        border: 1px solid #a8caba;
+        border-radius: 11px;
+        background: white;
+        color: var(--forest-900);
+        font-size: .82rem;
+        font-weight: 800;
+        line-height: 1.2;
+        text-align: center;
+        text-decoration: none;
+        overflow-wrap: anywhere;
+      }
+      .rental-action.primary {
+        border-color: var(--forest-900);
+        background: var(--forest-900);
+        color: white;
       }
       .trip-grid {
         display: grid;
@@ -900,6 +1031,7 @@
           border-bottom: 1px solid rgba(255,255,255,.18);
         }
         .wellness-copy { padding: 23px 20px; }
+        .charging-card .app-links { grid-template-columns: 1fr; }
         .trip-grid { grid-template-columns: 1fr; }
         .trip-card { min-height: 0; }
       }
@@ -963,6 +1095,12 @@
         .safety-link:last-child { grid-column: 1 / -1; }
         .feedback-card { align-items: stretch; flex-direction: column; }
         .feedback-link { width: 100%; }
+        .rental-head { align-items: stretch; flex-direction: column; gap: 12px; }
+        .rental-place { align-self: flex-start; white-space: normal; }
+        .rental-row { grid-template-columns: 1fr; }
+        .rental-row dt { padding-bottom: 4px; }
+        .rental-row dd { padding-top: 4px; border-left: 0; }
+        .rental-actions { grid-template-columns: 1fr; }
       }
 
       @media (max-width: 430px) {
@@ -1200,16 +1338,22 @@
               <div class="detail-icon" aria-hidden="true">P</div>
               <h3 data-i18n="parkingTitle">Parkovanie</h3>
               <p data-i18n="parking">Pre hostí je pri hoteli k dispozícii bezplatné súkromné parkovanie.</p>
-              <p class="charging-info" data-i18n="charging">Pri parkovisku je k dispozícii nabíjanie elektromobilov cez aplikáciu ZSE Drive.</p>
-              <div class="app-links" aria-label="ZSE Drive">
-                <a class="app-link" href="https://apps.apple.com/sk/app/zse-drive/id1180905521" target="_blank" rel="noopener noreferrer" aria-label="ZSE Drive – App Store">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm5 3.2a.9.9 0 0 0-.9.9v4H7.2a.9.9 0 1 0 0 1.8h3.9v4a.9.9 0 1 0 1.8 0v-4h3.9a.9.9 0 1 0 0-1.8h-3.9v-4a.9.9 0 0 0-.9-.9Z"/></svg>
-                  <span><small>ZSE Drive</small><strong>App Store</strong></span>
-                </a>
-                <a class="app-link" href="https://play.google.com/store/apps/details?id=sk.zse.drive" target="_blank" rel="noopener noreferrer" aria-label="ZSE Drive – Google Play">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 3.7a1.6 1.6 0 0 0-.4 1.1v14.4c0 .4.1.8.4 1.1l8.1-8.3-8.1-8.3Zm9.4 9.6-2.1-1.3 2.1-1.3 2.6-2.6-9.9-5.4 7.3 7.4 3.2-1.8c.5-.3 1.1-.3 1.6 0l-4.8 5Zm0 .6-7.3 7.4 9.9-5.4-2.6-2Zm.6-1.9 4.2-2.3c.5-.3 1.1-.3 1.5 0 .4.3.7.8.7 1.3s-.3 1-.7 1.3l-4.2-2.3-1.5 1Z"/></svg>
-                  <span><small>ZSE Drive</small><strong>Google Play</strong></span>
-                </a>
+              <div class="charging-card">
+                <div class="charging-heading">
+                  <span aria-hidden="true">⚡</span>
+                  <strong data-i18n="chargingTitle">Elektromobilita</strong>
+                </div>
+                <p class="charging-info" data-i18n="charging">Pri parkovisku je k dispozícii nabíjanie elektromobilov cez aplikáciu ZSE Drive.</p>
+                <div class="app-links" aria-label="ZSE Drive">
+                  <a class="app-link" href="https://apps.apple.com/sk/app/zse-drive/id1180905521" target="_blank" rel="noopener noreferrer" aria-label="ZSE Drive – App Store">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm5 3.2a.9.9 0 0 0-.9.9v4H7.2a.9.9 0 1 0 0 1.8h3.9v4a.9.9 0 1 0 1.8 0v-4h3.9a.9.9 0 1 0 0-1.8h-3.9v-4a.9.9 0 0 0-.9-.9Z"/></svg>
+                    <span><small>ZSE Drive</small><strong>App Store</strong></span>
+                  </a>
+                  <a class="app-link" href="https://play.google.com/store/apps/details?id=sk.zse.drive" target="_blank" rel="noopener noreferrer" aria-label="ZSE Drive – Google Play">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 3.7a1.6 1.6 0 0 0-.4 1.1v14.4c0 .4.1.8.4 1.1l8.1-8.3-8.1-8.3Zm9.4 9.6-2.1-1.3 2.1-1.3 2.6-2.6-9.9-5.4 7.3 7.4 3.2-1.8c.5-.3 1.1-.3 1.6 0l-4.8 5Zm0 .6-7.3 7.4 9.9-5.4-2.6-2Zm.6-1.9 4.2-2.3c.5-.3 1.1-.3 1.5 0 .4.3.7.8.7 1.3s-.3 1-.7 1.3l-4.2-2.3-1.5 1Z"/></svg>
+                    <span><small>ZSE Drive</small><strong>Google Play</strong></span>
+                  </a>
+                </div>
               </div>
             </article>
             <article class="card detail">
@@ -1239,6 +1383,40 @@
               <summary data-i18n="familyInfoTitle">Pre rodiny a pobyty so psom</summary>
               <p data-i18n="familyInfoText">Detskú postieľku pre deti do 3 rokov poskytuje hotel bezplatne. Pobyt so psom je možný iba vo vybraných izbách po dohode s recepciou.</p>
             </details>
+          </div>
+        </section>
+
+        <section class="section" id="rental">
+          <div class="card rental-card">
+            <div class="rental-head">
+              <div>
+                <span class="rental-kicker" data-i18n="rentalKicker">Požičovňa a zážitky</span>
+                <h2 data-i18n="rentalTitle">Požičovňa ALEX</h2>
+                <p data-i18n="rentalIntro">Športové vybavenie a programy so sprievodcom priamo v Dobšinskej Maši.</p>
+              </div>
+              <span class="rental-place">Dobšinská Maša 37</span>
+            </div>
+            <dl class="rental-table">
+              <div class="rental-row">
+                <dt data-i18n="rentalEquipmentLabel">Vybavenie</dt>
+                <dd data-i18n="rentalEquipment">Bicykle a e‑biky · paddleboardy · člny, kajaky a kanoe · horolezecká výstroj</dd>
+              </div>
+              <div class="rental-row">
+                <dt data-i18n="rentalServicesLabel">Služby</dt>
+                <dd data-i18n="rentalServices">Škola skalolezenia · horský sprievodca UIMLA · celodenné a teambuildingové programy</dd>
+              </div>
+            </dl>
+            <div class="rental-actions">
+              <a class="rental-action primary" href="https://www.alexski.sk/" target="_blank" rel="noopener noreferrer">
+                <span aria-hidden="true">↗</span><span data-i18n="rentalWebsite">Pozrieť ponuku</span>
+              </a>
+              <a class="rental-action" href="tel:+421905356540">
+                <span aria-hidden="true">☎</span><span><span data-i18n="rentalCall">Zavolať</span><br /><strong>0905 356 540</strong></span>
+              </a>
+              <a class="rental-action" href="tel:+421915135933">
+                <span aria-hidden="true">☎</span><span><span data-i18n="rentalCall">Zavolať</span><br /><strong>0915 135 933</strong></span>
+              </a>
+            </div>
           </div>
         </section>
 
@@ -1351,6 +1529,7 @@
           wifiPassword: "Heslo",
           wifiAccess: "hotelraj2023",
           parkingTitle: "Parkovanie", parking: "Pre hostí je pri hoteli k dispozícii bezplatné súkromné parkovanie.",
+          chargingTitle: "Elektromobilita",
           charging: "Pri parkovisku je k dispozícii nabíjanie elektromobilov cez aplikáciu ZSE Drive.",
           gamesTitle: "Spoločenské hry", games: "Spoločenské hry si môžete bezplatne zapožičať na izbu.",
           outdoorTitle: "Aktivity", outdoor: "Turistika, cyklistika, vodné športy a sezónne aktivity sú dostupné v okolí.",
@@ -1360,6 +1539,11 @@
           roomInfoText: "Izby majú vlastnú kúpeľňu, TV a chladničku. Ak potrebujete ďalšie uteráky alebo pomoc na izbe, kontaktujte recepciu.",
           familyInfoTitle: "Pre rodiny a pobyty so psom",
           familyInfoText: "Detskú postieľku pre deti do 3 rokov poskytuje hotel bezplatne. Pobyt so psom je možný iba vo vybraných izbách po dohode s recepciou.",
+          rentalKicker: "Požičovňa a zážitky", rentalTitle: "Požičovňa ALEX",
+          rentalIntro: "Športové vybavenie a programy so sprievodcom priamo v Dobšinskej Maši.",
+          rentalEquipmentLabel: "Vybavenie", rentalEquipment: "Bicykle a e‑biky · paddleboardy · člny, kajaky a kanoe · horolezecká výstroj",
+          rentalServicesLabel: "Služby", rentalServices: "Škola skalolezenia · horský sprievodca UIMLA · celodenné a teambuildingové programy",
+          rentalWebsite: "Pozrieť ponuku", rentalCall: "Zavolať",
           tripsTitle: "Objavte okolie", tripsIntro: "Tri tipy na výlet priamo zo srdca Slovenského raja. Pred odchodom vždy skontrolujte počasie a sezónnu prevádzku.",
           tripGeravyLabel: "Výhľad a turistika", tripGeravyText: "Výlet z Dediniek na planinu Geravy. Chodníky aj lanovka sú sezónne; pred odchodom si overte prevádzku a počasie.",
           tripCaveLabel: "Rodinný výlet", tripCaveTitle: "Dobšinská ľadová jaskyňa", tripCaveText: "Svetoznáma ľadová jaskyňa. Prevádzka je sezónna a k vstupu vedie približne 25-minútový výstup.",
@@ -1405,6 +1589,7 @@
           wifiPassword: "Password",
           wifiAccess: "hotelraj2023",
           parkingTitle: "Parking", parking: "Complimentary private parking is available next to the hotel.",
+          chargingTitle: "Electric mobility",
           charging: "EV charging is available by the car park via the ZSE Drive app.",
           gamesTitle: "Board games", games: "Board games can be borrowed for your room free of charge.",
           outdoorTitle: "Activities", outdoor: "Hiking, cycling, water sports and seasonal activities are available nearby.",
@@ -1414,6 +1599,11 @@
           roomInfoText: "Rooms have a private bathroom, TV and refrigerator. For extra towels or assistance in your room, please contact reception.",
           familyInfoTitle: "Families and stays with dogs",
           familyInfoText: "A cot is provided free of charge for children under 3. Dogs are welcome only in selected rooms by prior arrangement with reception.",
+          rentalKicker: "Rentals and experiences", rentalTitle: "ALEX rentals",
+          rentalIntro: "Sports equipment and guided activities right in Dobšinská Maša.",
+          rentalEquipmentLabel: "Equipment", rentalEquipment: "Bikes and e‑bikes · paddleboards · boats, kayaks and canoes · climbing equipment",
+          rentalServicesLabel: "Services", rentalServices: "Climbing school · UIMLA mountain leader · full-day and team-building programmes",
+          rentalWebsite: "View the offer", rentalCall: "Call",
           tripsTitle: "Discover the area", tripsIntro: "Three ideas for exploring the heart of Slovak Paradise. Always check the weather and seasonal operation before setting out.",
           tripGeravyLabel: "Views and hiking", tripGeravyText: "A trip from Dedinky to the Geravy plateau. Trails and the chairlift operate seasonally; check conditions before setting out.",
           tripCaveLabel: "Family trip", tripCaveTitle: "Dobšinská Ice Cave", tripCaveText: "A world-famous ice cave. It operates seasonally, and the entrance is reached by an uphill walk of about 25 minutes.",
@@ -1459,6 +1649,7 @@
           wifiPassword: "Wi‑Fi jelszó",
           wifiAccess: "hotelraj2023",
           parkingTitle: "Parkolás", parking: "A szálloda mellett ingyenes, privát parkoló áll vendégeink rendelkezésére.",
+          chargingTitle: "Elektromobilitás",
           charging: "A parkoló mellett elektromosautó-töltő érhető el a ZSE Drive alkalmazással.",
           gamesTitle: "Társasjátékok", games: "A társasjátékok díjmentesen kölcsönözhetők a szobába.",
           outdoorTitle: "Programok", outdoor: "Túrázás, kerékpározás, vízi sportok és szezonális programok érhetők el a közelben.",
@@ -1468,6 +1659,11 @@
           roomInfoText: "A szobák saját fürdőszobával, TV-vel és hűtőszekrénnyel rendelkeznek. További törölközőért vagy segítségért forduljon a recepcióhoz.",
           familyInfoTitle: "Családok és kutyával érkezők",
           familyInfoText: "A 3 év alatti gyermekek számára a kiságy ingyenes. Kutyával csak kijelölt szobákban, a recepcióval előre egyeztetve lehet megszállni.",
+          rentalKicker: "Kölcsönzés és élmények", rentalTitle: "ALEX kölcsönző",
+          rentalIntro: "Sportfelszerelés és vezetett programok közvetlenül Dobšinská Maša településen.",
+          rentalEquipmentLabel: "Felszerelés", rentalEquipment: "Kerékpárok és e‑bike-ok · SUP-ok · csónakok, kajakok és kenuk · mászófelszerelés",
+          rentalServicesLabel: "Szolgáltatások", rentalServices: "Sziklamászó iskola · UIMLA hegyi túravezető · egész napos és csapatépítő programok",
+          rentalWebsite: "Kínálat megtekintése", rentalCall: "Hívás",
           tripsTitle: "Fedezze fel a környéket", tripsIntro: "Három kirándulási tipp a Szlovák Paradicsom szívéből. Indulás előtt mindig ellenőrizze az időjárást és a szezonális nyitvatartást.",
           tripGeravyLabel: "Kilátás és túrázás", tripGeravyText: "Kirándulás Dedinkyből a Geravy-fennsíkra. A túraútvonalak és a felvonó szezonálisan működnek; indulás előtt ellenőrizze a feltételeket.",
           tripCaveLabel: "Családi kirándulás", tripCaveTitle: "Dobsinai-jégbarlang", tripCaveText: "Világhírű jégbarlang. Szezonálisan látogatható, a bejárathoz körülbelül 25 perces emelkedő vezet.",
@@ -1513,6 +1709,7 @@
           wifiPassword: "Hasło Wi‑Fi",
           wifiAccess: "hotelraj2023",
           parkingTitle: "Parking", parking: "Przy hotelu dostępny jest bezpłatny prywatny parking dla gości.",
+          chargingTitle: "Elektromobilność",
           charging: "Przy parkingu dostępne jest ładowanie samochodów elektrycznych za pomocą aplikacji ZSE Drive.",
           gamesTitle: "Gry planszowe", games: "Gry planszowe można bezpłatnie wypożyczyć do pokoju.",
           outdoorTitle: "Atrakcje", outdoor: "W pobliżu dostępne są piesze wycieczki, jazda na rowerze, sporty wodne i atrakcje sezonowe.",
@@ -1522,6 +1719,11 @@
           roomInfoText: "Pokoje mają prywatną łazienkę, telewizor i lodówkę. Jeśli potrzebują Państwo dodatkowych ręczników lub pomocy w pokoju, prosimy skontaktować się z recepcją.",
           familyInfoTitle: "Dla rodzin i pobytów z psem",
           familyInfoText: "Łóżeczko dla dzieci do 3 lat jest bezpłatne. Pobyt z psem jest możliwy wyłącznie w wybranych pokojach po wcześniejszym uzgodnieniu z recepcją.",
+          rentalKicker: "Wypożyczalnia i atrakcje", rentalTitle: "Wypożyczalnia ALEX",
+          rentalIntro: "Sprzęt sportowy i programy z przewodnikiem bezpośrednio w miejscowości Dobšinská Maša.",
+          rentalEquipmentLabel: "Sprzęt", rentalEquipment: "Rowery i rowery elektryczne · deski SUP · łodzie, kajaki i kanadyjki · sprzęt wspinaczkowy",
+          rentalServicesLabel: "Usługi", rentalServices: "Szkoła wspinaczki · przewodnik górski UIMLA · programy całodniowe i integracyjne",
+          rentalWebsite: "Zobacz ofertę", rentalCall: "Zadzwoń",
           tripsTitle: "Odkryj okolicę", tripsIntro: "Trzy propozycje wycieczek w sercu Słowackiego Raju. Przed wyjściem zawsze sprawdź pogodę i sezonową dostępność atrakcji.",
           tripGeravyLabel: "Widoki i wędrówki", tripGeravyText: "Wycieczka z Dediniek na płaskowyż Geravy. Szlaki i kolej krzesełkowa działają sezonowo; przed wyjściem sprawdź warunki.",
           tripCaveLabel: "Wycieczka rodzinna", tripCaveTitle: "Dobszyńska Jaskinia Lodowa", tripCaveText: "Światowej sławy jaskinia lodowa. Jest czynna sezonowo, a dojście do wejścia zajmuje około 25 minut pod górę.",
@@ -1567,6 +1769,7 @@
           wifiPassword: "WLAN-Passwort",
           wifiAccess: "hotelraj2023",
           parkingTitle: "Parken", parking: "Kostenlose Privatparkplätze stehen direkt am Hotel zur Verfügung.",
+          chargingTitle: "Elektromobilität",
           charging: "Am Parkplatz steht eine E-Ladestation zur Verfügung, nutzbar über die ZSE Drive App.",
           gamesTitle: "Brettspiele", games: "Brettspiele können kostenlos für das Zimmer ausgeliehen werden.",
           outdoorTitle: "Aktivitäten", outdoor: "Wandern, Radfahren, Wassersport und saisonale Aktivitäten sind in der Umgebung möglich.",
@@ -1576,6 +1779,11 @@
           roomInfoText: "Die Zimmer verfügen über ein eigenes Bad, TV und Kühlschrank. Für zusätzliche Handtücher oder Hilfe im Zimmer wenden Sie sich bitte an die Rezeption.",
           familyInfoTitle: "Familien und Aufenthalte mit Hund",
           familyInfoText: "Ein Babybett für Kinder unter 3 Jahren ist kostenlos. Hunde sind nur in ausgewählten Zimmern und nach vorheriger Absprache mit der Rezeption erlaubt.",
+          rentalKicker: "Verleih und Erlebnisse", rentalTitle: "ALEX-Verleih",
+          rentalIntro: "Sportausrüstung und geführte Aktivitäten direkt in Dobšinská Maša.",
+          rentalEquipmentLabel: "Ausrüstung", rentalEquipment: "Fahrräder und E‑Bikes · SUP-Boards · Boote, Kajaks und Kanus · Kletterausrüstung",
+          rentalServicesLabel: "Angebote", rentalServices: "Kletterschule · UIMLA-Bergwanderführer · Ganztages- und Teambuilding-Programme",
+          rentalWebsite: "Angebot ansehen", rentalCall: "Anrufen",
           tripsTitle: "Entdecken Sie die Umgebung", tripsIntro: "Drei Ausflugstipps mitten im Slowakischen Paradies. Prüfen Sie vor dem Aufbruch immer das Wetter und den saisonalen Betrieb.",
           tripGeravyLabel: "Aussicht und Wandern", tripGeravyText: "Ein Ausflug von Dedinky auf die Geravy-Hochebene. Wanderwege und Sessellift sind saisonabhängig; prüfen Sie vorab die Bedingungen.",
           tripCaveLabel: "Familienausflug", tripCaveTitle: "Dobschauer Eishöhle", tripCaveText: "Eine weltberühmte Eishöhle. Sie ist saisonal geöffnet; zum Eingang führt ein etwa 25-minütiger Anstieg.",
