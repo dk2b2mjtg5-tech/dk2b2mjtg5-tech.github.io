@@ -354,6 +354,17 @@
         font-size: 1.7rem;
         line-height: 1.05;
       }
+      .wellness-hours {
+        margin: 14px 0 0;
+        padding: 10px 12px;
+        border: 1px solid rgba(241,199,111,.42);
+        border-radius: 12px;
+        background: rgba(215,168,78,.12);
+        color: #fff4d3;
+        font-size: .9rem;
+        font-weight: 800;
+        line-height: 1.4;
+      }
       .wellness-prices {
         display: grid;
         gap: 8px;
@@ -388,6 +399,16 @@
         font-weight: 750;
       }
       .wellness-copy p { margin: 14px 0 0; color: #dbeae6; }
+      .wellness-copy .wellness-services {
+        margin-top: 12px;
+        padding: 12px 13px;
+        border: 1px solid rgba(255,255,255,.2);
+        border-radius: 12px;
+        background: rgba(255,255,255,.07);
+        color: #e7f1ed;
+        font-size: .88rem;
+        line-height: 1.45;
+      }
       .wellness-copy .wellness-rule {
         margin-top: 12px;
         padding: 12px 13px;
@@ -899,12 +920,13 @@
           <h2 class="section-heading" data-i18n="wellnessTitle">Wellness Raj</h2>
           <div class="wellness-card">
             <div class="wellness-stat" aria-hidden="true">
-              <strong data-i18n="wellnessDurationShort">2 h</strong>
-              <span data-i18n="wellnessEntry">wellness vstup</span>
+              <strong data-i18n="wellnessHoursShort">10–21</strong>
+              <span data-i18n="wellnessHoursLabel">otváracie hodiny</span>
             </div>
             <div class="wellness-copy">
               <span class="wellness-badge" data-i18n="wellnessBadge">Cenník wellness</span>
               <h3 data-i18n="wellnessHeading">Dve hodiny oddychu</h3>
+              <p class="wellness-hours" data-i18n="wellnessHours">Otvorené denne 10:00–21:00 · posledný vstup 19:00</p>
               <dl class="wellness-prices">
                 <div class="wellness-price">
                   <dt data-i18n="wellnessAdult">Dospelá osoba</dt>
@@ -915,8 +937,9 @@
                   <dd>11 € <small data-i18n="wellnessPriceDuration">/ 2 h</small></dd>
                 </div>
               </dl>
-              <p data-i18n="wellnessText">Vstup do wellness nie je automaticky zahrnutý v každom pobyte. Uvedený cenník platí pre ubytovaných aj neubytovaných hostí. Čas vstupu si, prosím, dohodnite na recepcii.</p>
+              <p data-i18n="wellnessText">Vstup nie je zahrnutý v každom pobyte. Cenník platí pre ubytovaných aj neubytovaných hostí; termín si dohodnite na recepcii.</p>
               <p class="wellness-rule" data-i18n="wellnessChildrenRule">Deti do 15 rokov môžu wellness využívať iba do 17:00. Fínska sauna nie je určená pre deti.</p>
+              <p class="wellness-services" data-i18n="wellnessServices">Procedúry BEMER EVO a Super Ravo Zapper: 10 € / osoba. Masáže si môžete objednať na recepcii.</p>
               <div class="wellness-actions">
                 <a class="wellness-action primary" href="tel:+421911930991" data-i18n="wellnessCall">Dohodnúť vstup</a>
                 <a class="wellness-action" href="mailto:reception@hotelraj.eu" data-i18n="wellnessEmail">Napísať recepcii</a>
@@ -1064,8 +1087,10 @@
           menu: "Otvoriť jedálny lístok",
           wellnessTitle: "Wellness Raj", wellnessEntry: "wellness vstup", wellnessBadge: "Cenník wellness",
           wellnessHeading: "Dve hodiny oddychu", wellnessAdult: "Dospelá osoba", wellnessChild: "Dieťa do 15 rokov", wellnessDurationShort: "2 h", wellnessPriceDuration: "/ 2 h",
-          wellnessText: "Vstup do wellness nie je automaticky zahrnutý v každom pobyte. Uvedený cenník platí pre ubytovaných aj neubytovaných hostí. Čas vstupu si, prosím, dohodnite na recepcii.",
+          wellnessHoursShort: "10–21", wellnessHoursLabel: "otváracie hodiny", wellnessHours: "Otvorené denne 10:00–21:00 · posledný vstup 19:00",
+          wellnessText: "Vstup nie je zahrnutý v každom pobyte. Cenník platí pre ubytovaných aj neubytovaných hostí; termín si dohodnite na recepcii.",
           wellnessChildrenRule: "Deti do 15 rokov môžu wellness využívať iba do 17:00. Fínska sauna nie je určená pre deti.",
+          wellnessServices: "Procedúry BEMER EVO a Super Ravo Zapper: 10 € / osoba. Masáže si môžete objednať na recepcii.",
           wellnessCall: "Dohodnúť vstup", wellnessEmail: "Napísať recepcii",
           stayTitle: "Počas pobytu",
           wifi: "Bezplatné Wi‑Fi je dostupné vo všetkých priestoroch hotela.",
@@ -1108,8 +1133,10 @@
           menu: "Open the menu",
           wellnessTitle: "Wellness Raj", wellnessEntry: "wellness access", wellnessBadge: "Wellness prices",
           wellnessHeading: "Two hours of relaxation", wellnessAdult: "Adult", wellnessChild: "Child under 15", wellnessDurationShort: "2 hrs", wellnessPriceDuration: "/ 2 hrs",
-          wellnessText: "Wellness access is not automatically included with every stay. The prices shown apply to both hotel guests and day visitors. Please arrange your entry time with reception.",
+          wellnessHoursShort: "10–21", wellnessHoursLabel: "opening hours", wellnessHours: "Open daily 10:00–21:00 · last entry 19:00",
+          wellnessText: "Wellness is not included with every stay. Prices apply to hotel guests and day visitors; please arrange your entry at reception.",
           wellnessChildrenRule: "Children under 15 may use the wellness area only until 17:00. The Finnish sauna is not intended for children.",
+          wellnessServices: "BEMER EVO and Super Ravo Zapper treatments: €10 per person. Massages can be booked at reception.",
           wellnessCall: "Arrange entry", wellnessEmail: "E-mail reception",
           stayTitle: "During your stay",
           wifi: "Complimentary Wi‑Fi is available throughout the hotel.",
@@ -1152,8 +1179,10 @@
           menu: "Étlap megnyitása",
           wellnessTitle: "Wellness Raj", wellnessEntry: "wellnessbelépő", wellnessBadge: "Wellness árak",
           wellnessHeading: "Két óra kikapcsolódás", wellnessAdult: "Felnőtt", wellnessChild: "15 év alatti gyermek", wellnessDurationShort: "2 óra", wellnessPriceDuration: "/ 2 óra",
-          wellnessText: "A wellnessbelépő nem minden tartózkodás árában szerepel automatikusan. A feltüntetett árak a szállóvendégekre és a külső vendégekre egyaránt érvényesek. Kérjük, a belépés időpontját egyeztesse a recepción.",
+          wellnessHoursShort: "10–21", wellnessHoursLabel: "nyitvatartás", wellnessHours: "Nyitva naponta 10:00–21:00 · utolsó belépés 19:00",
+          wellnessText: "A wellnessbelépő nem minden tartózkodás része. Az árak a szállóvendégekre és a külső vendégekre is érvényesek; kérjük, egyeztessen időpontot a recepción.",
           wellnessChildrenRule: "A 15 év alatti gyermekek csak 17:00 óráig használhatják a wellnessrészleget. A finn szauna gyermekek számára nem használható.",
+          wellnessServices: "BEMER EVO és Super Ravo Zapper kezelések: 10 € / fő. Masszázs a recepción foglalható.",
           wellnessCall: "Időpont egyeztetése", wellnessEmail: "E-mail a recepciónak",
           stayTitle: "Tartózkodása alatt",
           wifi: "Ingyenes Wi‑Fi érhető el a szálloda egész területén.",
@@ -1196,8 +1225,10 @@
           menu: "Otwórz menu",
           wellnessTitle: "Wellness Raj", wellnessEntry: "wstęp do wellness", wellnessBadge: "Cennik wellness",
           wellnessHeading: "Dwie godziny relaksu", wellnessAdult: "Osoba dorosła", wellnessChild: "Dziecko do 15 lat", wellnessDurationShort: "2 godz.", wellnessPriceDuration: "/ 2 godz.",
-          wellnessText: "Wstęp do strefy wellness nie jest automatycznie wliczony w cenę każdego pobytu. Podany cennik obowiązuje zarówno gości hotelowych, jak i osoby niezakwaterowane. Prosimy uzgodnić godzinę wejścia z recepcją.",
+          wellnessHoursShort: "10–21", wellnessHoursLabel: "godziny otwarcia", wellnessHours: "Otwarte codziennie 10:00–21:00 · ostatnie wejście o 19:00",
+          wellnessText: "Wellness nie jest wliczone w każdy pobyt. Cennik obowiązuje gości hotelowych i osoby niezakwaterowane; termin należy uzgodnić w recepcji.",
           wellnessChildrenRule: "Dzieci do 15 lat mogą korzystać ze strefy wellness wyłącznie do godziny 17:00. Sauna fińska nie jest przeznaczona dla dzieci.",
+          wellnessServices: "Zabiegi BEMER EVO i Super Ravo Zapper: 10 € / osoba. Masaże można rezerwować w recepcji.",
           wellnessCall: "Uzgodnij wejście", wellnessEmail: "Napisz do recepcji",
           stayTitle: "Podczas pobytu",
           wifi: "Bezpłatne Wi‑Fi jest dostępne na terenie całego hotelu.",
@@ -1240,8 +1271,10 @@
           menu: "Speisekarte öffnen",
           wellnessTitle: "Wellness Raj", wellnessEntry: "Wellnesseintritt", wellnessBadge: "Wellnesspreise",
           wellnessHeading: "Zwei Stunden Erholung", wellnessAdult: "Erwachsene", wellnessChild: "Kind unter 15 Jahren", wellnessDurationShort: "2 Std.", wellnessPriceDuration: "/ 2 Std.",
-          wellnessText: "Der Wellnesseintritt ist nicht automatisch bei jedem Aufenthalt inklusive. Die angegebenen Preise gelten gleichermaßen für Hotelgäste und externe Gäste. Bitte vereinbaren Sie die Eintrittszeit mit der Rezeption.",
+          wellnessHoursShort: "10–21", wellnessHoursLabel: "Öffnungszeiten", wellnessHours: "Täglich 10:00–21:00 Uhr geöffnet · letzter Einlass um 19:00 Uhr",
+          wellnessText: "Der Wellnesseintritt ist nicht bei jedem Aufenthalt inklusive. Die Preise gelten für Hotelgäste und externe Gäste; bitte vereinbaren Sie den Termin an der Rezeption.",
           wellnessChildrenRule: "Kinder unter 15 Jahren dürfen den Wellnessbereich nur bis 17:00 Uhr nutzen. Die finnische Sauna ist nicht für Kinder vorgesehen.",
+          wellnessServices: "BEMER EVO- und Super Ravo Zapper-Anwendungen: 10 € / Person. Massagen können an der Rezeption gebucht werden.",
           wellnessCall: "Eintritt vereinbaren", wellnessEmail: "E-Mail an die Rezeption",
           stayTitle: "Während Ihres Aufenthalts",
           wifi: "Kostenloses WLAN steht im gesamten Hotel zur Verfügung.",
