@@ -398,6 +398,28 @@
         font-size: .78rem;
         font-weight: 750;
       }
+      .wellness-member-rate {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 10px;
+        margin-top: 9px;
+        padding: 10px 12px;
+        border: 1px solid rgba(241,199,111,.42);
+        border-radius: 12px;
+        background: rgba(215,168,78,.12);
+      }
+      .wellness-member-rate span {
+        color: #fff4d3;
+        font-size: .875rem;
+        font-weight: 750;
+      }
+      .wellness-member-rate strong {
+        flex: 0 0 auto;
+        color: #f1c76f;
+        font-size: .875rem;
+        white-space: nowrap;
+      }
       .wellness-copy p { margin: 14px 0 0; color: #dbeae6; }
       .wellness-services {
         margin-top: 12px;
@@ -445,11 +467,80 @@
         line-height: 1.4;
         hyphens: auto;
       }
-      .wellness-copy .wellness-massage {
-        margin: 10px 0 0;
+      .massage-menu {
+        margin-top: 10px;
+        border-top: 1px solid rgba(255,255,255,.16);
+      }
+      .massage-menu summary {
+        min-height: 52px;
+        padding: 10px 1px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        cursor: pointer;
+        list-style: none;
+      }
+      .massage-menu summary::-webkit-details-marker { display: none; }
+      .massage-summary-copy { min-width: 0; }
+      .massage-summary-copy strong,
+      .massage-summary-copy small { display: block; }
+      .massage-summary-copy strong { color: white; font-size: .95rem; }
+      .massage-summary-copy small {
+        margin-top: 2px;
+        color: #dbeae6;
+        font-size: .82rem;
+      }
+      .massage-toggle {
+        width: 32px;
+        height: 32px;
+        flex: 0 0 auto;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(255,255,255,.28);
+        border-radius: 50%;
+        color: #f1c76f;
+        font-size: 1.3rem;
+        line-height: 1;
+      }
+      .massage-toggle::before { content: "+"; }
+      .massage-menu[open] .massage-toggle::before { content: "−"; }
+      .massage-list {
+        margin: 8px 0 0;
+        padding: 0;
+        display: grid;
+        gap: 6px;
+        list-style: none;
+      }
+      .massage-row {
+        min-width: 0;
+        padding: 8px 9px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 10px;
+        border-radius: 9px;
+        background: rgba(255,255,255,.065);
         color: #e7f1ed;
         font-size: .875rem;
-        font-weight: 700;
+      }
+      .massage-row > span:first-child {
+        min-width: 0;
+        overflow-wrap: anywhere;
+        hyphens: auto;
+      }
+      .massage-meta {
+        display: flex;
+        align-items: baseline;
+        gap: 9px;
+        color: #dbeae6;
+        white-space: nowrap;
+      }
+      .massage-meta strong { color: #f1c76f; font-size: .9rem; }
+      .wellness-copy .massage-vat {
+        margin: 8px 1px 0;
+        color: #bcd1ca;
+        font-size: .78rem;
       }
       .wellness-copy .wellness-rule {
         margin-top: 12px;
@@ -501,7 +592,7 @@
         text-decoration: none;
       }
       .link-button:focus-visible, .language button:focus-visible, .contact-link:focus-visible,
-      .action-link:focus-visible, .wellness-action:focus-visible, .trip-link:focus-visible,
+      .action-link:focus-visible, .wellness-action:focus-visible, .app-link:focus-visible, .trip-link:focus-visible,
       .safety-link:focus-visible, .feedback-link:focus-visible, summary:focus-visible {
         outline: 3px solid var(--gold);
         outline-offset: 3px;
@@ -549,6 +640,36 @@
         text-align: right;
         white-space: nowrap;
       }
+      .detail .charging-info { margin-top: 12px; }
+      .app-links {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .app-link {
+        min-width: 0;
+        min-height: 46px;
+        padding: 9px 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: 1px solid #bfd1cb;
+        border-radius: 11px;
+        background: #f1f7f4;
+        color: var(--forest-950);
+        text-decoration: none;
+      }
+      .app-link svg {
+        width: 21px;
+        height: 21px;
+        flex: 0 0 auto;
+      }
+      .app-link span { min-width: 0; }
+      .app-link small,
+      .app-link strong { display: block; }
+      .app-link small { color: var(--muted); font-size: .75rem; line-height: 1.1; }
+      .app-link strong { margin-top: 2px; font-size: .875rem; line-height: 1.1; }
 
       .notice {
         display: flex;
@@ -831,6 +952,13 @@
         .link-button { width: 100%; }
         .wellness-action { width: 100%; }
         .wellness-treatments { grid-template-columns: 1fr; }
+        .wellness-member-rate {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 4px;
+        }
+        .massage-row { grid-template-columns: 1fr; gap: 4px; }
+        .massage-meta { justify-content: space-between; }
         .safety-actions { grid-template-columns: 1fr 1fr; }
         .safety-link:last-child { grid-column: 1 / -1; }
         .feedback-card { align-items: stretch; flex-direction: column; }
@@ -847,6 +975,7 @@
       @media (max-width: 360px) {
         .wellness-price { grid-template-columns: 1fr; }
         .wellness-price dd { justify-self: start; }
+        .app-links { grid-template-columns: 1fr; }
       }
 
       @media (min-width: 720px) {
@@ -980,6 +1109,10 @@
                   <dd>11 € <small data-i18n="wellnessPriceDuration">/ 2 h</small></dd>
                 </div>
               </dl>
+              <div class="wellness-member-rate">
+                <span data-i18n="wellnessMemberTitle">Členovia Tradičného družstva</span>
+                <strong data-i18n="wellnessMemberPrice">Dospelý 15 € · dieťa 9 €</strong>
+              </div>
               <p data-i18n="wellnessText">Vstup nie je zahrnutý v každom pobyte. Cenník platí pre ubytovaných aj neubytovaných hostí; termín si dohodnite na recepcii.</p>
               <p class="wellness-rule" data-i18n="wellnessChildrenRule">Deti do 15 rokov môžu wellness využívať iba do 17:00. Fínska sauna nie je určená pre deti.</p>
               <div class="wellness-services">
@@ -994,7 +1127,54 @@
                     <span data-i18n="zapperDescription">Podpora vitality a celkovej rovnováhy.</span>
                   </div>
                 </div>
-                <p class="wellness-massage" data-i18n="wellnessMassage">Masáže si môžete objednať na recepcii.</p>
+                <details class="massage-menu">
+                  <summary>
+                    <span class="massage-summary-copy">
+                      <strong data-i18n="massageTitle">Cenník masáží</strong>
+                      <small data-i18n="massageBooking">Objednanie na recepcii</small>
+                    </span>
+                    <span class="massage-toggle" aria-hidden="true"></span>
+                  </summary>
+                  <ul class="massage-list">
+                    <li class="massage-row">
+                      <span data-i18n="massagePartial">Klasická čiastočná masáž</span>
+                      <span class="massage-meta"><span>30 min</span><strong>55 €</strong></span>
+                    </li>
+                    <li class="massage-row">
+                      <span data-i18n="massageFull">Klasická celotelová masáž</span>
+                      <span class="massage-meta"><span>60 min</span><strong>80 €</strong></span>
+                    </li>
+                    <li class="massage-row">
+                      <span data-i18n="massageAroma">Relaxačná aromaterapeutická masáž</span>
+                      <span class="massage-meta"><span>50 min</span><strong>75 €</strong></span>
+                    </li>
+                    <li class="massage-row">
+                      <span data-i18n="massageStones">Masáž lávovými kameňmi</span>
+                      <span class="massage-meta"><span>60 min</span><strong>70 €</strong></span>
+                    </li>
+                    <li class="massage-row">
+                      <span data-i18n="massageSport">Športová masáž</span>
+                      <span class="massage-meta"><span>60 min</span><strong>75 €</strong></span>
+                    </li>
+                    <li class="massage-row">
+                      <span data-i18n="massageFeet">Reflexná masáž chodidiel</span>
+                      <span class="massage-meta"><span>30 min</span><strong>45 €</strong></span>
+                    </li>
+                    <li class="massage-row">
+                      <span data-i18n="massageNeck">Rýchla úľava – šija a ramená</span>
+                      <span class="massage-meta"><span>20 min</span><strong>45 €</strong></span>
+                    </li>
+                    <li class="massage-row">
+                      <span data-i18n="massageFace">Kozmetická lymfodrenáž tváre</span>
+                      <span class="massage-meta"><span>25 min</span><strong>50 €</strong></span>
+                    </li>
+                    <li class="massage-row">
+                      <span data-i18n="massageBody">Celotelová procedúra</span>
+                      <span class="massage-meta"><span>80 min</span><strong>105 €</strong></span>
+                    </li>
+                  </ul>
+                  <p class="massage-vat" data-i18n="massageVat">Ceny sú uvedené s DPH.</p>
+                </details>
               </div>
               <div class="wellness-actions">
                 <a class="wellness-action primary" href="tel:+421911930991" data-i18n="wellnessCall">Dohodnúť vstup</a>
@@ -1020,6 +1200,17 @@
               <div class="detail-icon" aria-hidden="true">P</div>
               <h3 data-i18n="parkingTitle">Parkovanie</h3>
               <p data-i18n="parking">Pre hostí je pri hoteli k dispozícii bezplatné súkromné parkovanie.</p>
+              <p class="charging-info" data-i18n="charging">Pri parkovisku je k dispozícii nabíjanie elektromobilov cez aplikáciu ZSE Drive.</p>
+              <div class="app-links" aria-label="ZSE Drive">
+                <a class="app-link" href="https://apps.apple.com/sk/app/zse-drive/id1180905521" target="_blank" rel="noopener noreferrer" aria-label="ZSE Drive – App Store">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm5 3.2a.9.9 0 0 0-.9.9v4H7.2a.9.9 0 1 0 0 1.8h3.9v4a.9.9 0 1 0 1.8 0v-4h3.9a.9.9 0 1 0 0-1.8h-3.9v-4a.9.9 0 0 0-.9-.9Z"/></svg>
+                  <span><small>ZSE Drive</small><strong>App Store</strong></span>
+                </a>
+                <a class="app-link" href="https://play.google.com/store/apps/details?id=sk.zse.drive" target="_blank" rel="noopener noreferrer" aria-label="ZSE Drive – Google Play">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M5.4 3.7a1.6 1.6 0 0 0-.4 1.1v14.4c0 .4.1.8.4 1.1l8.1-8.3-8.1-8.3Zm9.4 9.6-2.1-1.3 2.1-1.3 2.6-2.6-9.9-5.4 7.3 7.4 3.2-1.8c.5-.3 1.1-.3 1.6 0l-4.8 5Zm0 .6-7.3 7.4 9.9-5.4-2.6-2Zm.6-1.9 4.2-2.3c.5-.3 1.1-.3 1.5 0 .4.3.7.8.7 1.3s-.3 1-.7 1.3l-4.2-2.3-1.5 1Z"/></svg>
+                  <span><small>ZSE Drive</small><strong>Google Play</strong></span>
+                </a>
+              </div>
             </article>
             <article class="card detail">
               <div class="detail-icon" aria-hidden="true">♟</div>
@@ -1144,18 +1335,23 @@
           wellnessTitle: "Wellness Raj", wellnessEntry: "wellness vstup", wellnessBadge: "Cenník wellness",
           wellnessHeading: "Dve hodiny oddychu", wellnessAdult: "Dospelá osoba", wellnessChild: "Dieťa do 15 rokov", wellnessDurationShort: "2 h", wellnessPriceDuration: "/ 2 h",
           wellnessHoursShort: "10–21", wellnessHoursLabel: "otváracie hodiny", wellnessHours: "Otvorené denne 10:00–21:00 · posledný vstup 19:00",
+          wellnessMemberTitle: "Členovia Tradičného družstva", wellnessMemberPrice: "Dospelý 15 € · dieťa 9 €",
           wellnessText: "Vstup nie je zahrnutý v každom pobyte. Cenník platí pre ubytovaných aj neubytovaných hostí; termín si dohodnite na recepcii.",
           wellnessChildrenRule: "Deti do 15 rokov môžu wellness využívať iba do 17:00. Fínska sauna nie je určená pre deti.",
           wellnessServicesTitle: "Procedúry · 10 € / osoba",
           bemerDescription: "Podpora mikrocirkulácie a regenerácie organizmu.",
           zapperDescription: "Podpora vitality a celkovej rovnováhy.",
-          wellnessMassage: "Masáže si môžete objednať na recepcii.",
+          massageTitle: "Cenník masáží", massageBooking: "Objednanie na recepcii", massageVat: "Ceny sú uvedené s DPH.",
+          massagePartial: "Klasická čiastočná masáž", massageFull: "Klasická celotelová masáž", massageAroma: "Relaxačná aromaterapeutická masáž",
+          massageStones: "Masáž lávovými kameňmi", massageSport: "Športová masáž", massageFeet: "Reflexná masáž chodidiel",
+          massageNeck: "Rýchla úľava – šija a ramená", massageFace: "Kozmetická lymfodrenáž tváre", massageBody: "Celotelová procedúra",
           wellnessCall: "Dohodnúť vstup", wellnessEmail: "Napísať recepcii",
           stayTitle: "Počas pobytu",
           wifi: "Bezplatné Wi‑Fi je dostupné vo všetkých priestoroch hotela.",
           wifiPassword: "Heslo",
           wifiAccess: "hotelraj2023",
           parkingTitle: "Parkovanie", parking: "Pre hostí je pri hoteli k dispozícii bezplatné súkromné parkovanie.",
+          charging: "Pri parkovisku je k dispozícii nabíjanie elektromobilov cez aplikáciu ZSE Drive.",
           gamesTitle: "Spoločenské hry", games: "Spoločenské hry si môžete bezplatne zapožičať na izbu.",
           outdoorTitle: "Aktivity", outdoor: "Turistika, cyklistika, vodné športy a sezónne aktivity sú dostupné v okolí.",
           flexTitle: "Skorší príchod alebo neskorší odchod",
@@ -1193,18 +1389,23 @@
           wellnessTitle: "Wellness Raj", wellnessEntry: "wellness access", wellnessBadge: "Wellness prices",
           wellnessHeading: "Two hours of relaxation", wellnessAdult: "Adult", wellnessChild: "Child under 15", wellnessDurationShort: "2 hrs", wellnessPriceDuration: "/ 2 hrs",
           wellnessHoursShort: "10–21", wellnessHoursLabel: "opening hours", wellnessHours: "Open daily 10:00–21:00 · last entry 19:00",
+          wellnessMemberTitle: "Tradičné družstvo members", wellnessMemberPrice: "Adult €15 · child €9",
           wellnessText: "Wellness is not included with every stay. Prices apply to hotel guests and day visitors; please arrange your entry at reception.",
           wellnessChildrenRule: "Children under 15 may use the wellness area only until 17:00. The Finnish sauna is not intended for children.",
           wellnessServicesTitle: "Treatments · €10 per person",
           bemerDescription: "Supports microcirculation and recovery.",
           zapperDescription: "Supports vitality and overall balance.",
-          wellnessMassage: "Massages can be booked at reception.",
+          massageTitle: "Massage prices", massageBooking: "Book at reception", massageVat: "Prices include VAT.",
+          massagePartial: "Classic partial massage", massageFull: "Classic full-body massage", massageAroma: "Relaxing aromatherapy massage",
+          massageStones: "Hot stone massage", massageSport: "Sports massage", massageFeet: "Foot reflexology massage",
+          massageNeck: "Quick relief – neck and shoulders", massageFace: "Cosmetic facial lymphatic drainage", massageBody: "Full-body treatment",
           wellnessCall: "Arrange entry", wellnessEmail: "E-mail reception",
           stayTitle: "During your stay",
           wifi: "Complimentary Wi‑Fi is available throughout the hotel.",
           wifiPassword: "Password",
           wifiAccess: "hotelraj2023",
           parkingTitle: "Parking", parking: "Complimentary private parking is available next to the hotel.",
+          charging: "EV charging is available by the car park via the ZSE Drive app.",
           gamesTitle: "Board games", games: "Board games can be borrowed for your room free of charge.",
           outdoorTitle: "Activities", outdoor: "Hiking, cycling, water sports and seasonal activities are available nearby.",
           flexTitle: "Early check-in or late check-out",
@@ -1242,18 +1443,23 @@
           wellnessTitle: "Wellness Raj", wellnessEntry: "wellnessbelépő", wellnessBadge: "Wellness árak",
           wellnessHeading: "Két óra kikapcsolódás", wellnessAdult: "Felnőtt", wellnessChild: "15 év alatti gyermek", wellnessDurationShort: "2 óra", wellnessPriceDuration: "/ 2 óra",
           wellnessHoursShort: "10–21", wellnessHoursLabel: "nyitvatartás", wellnessHours: "Nyitva naponta 10:00–21:00 · utolsó belépés 19:00",
+          wellnessMemberTitle: "A Tradičné družstvo tagjai", wellnessMemberPrice: "Felnőtt 15 € · gyermek 9 €",
           wellnessText: "A wellnessbelépő nem minden tartózkodás része. Az árak a szállóvendégekre és a külső vendégekre is érvényesek; kérjük, egyeztessen időpontot a recepción.",
           wellnessChildrenRule: "A 15 év alatti gyermekek csak 17:00 óráig használhatják a wellnessrészleget. A finn szauna gyermekek számára nem használható.",
           wellnessServicesTitle: "Kezelések · 10 € / fő",
           bemerDescription: "A mikrokeringés és a regeneráció támogatására.",
           zapperDescription: "A vitalitás és az általános egyensúly támogatására.",
-          wellnessMassage: "Masszázs a recepción foglalható.",
+          massageTitle: "Masszázsárak", massageBooking: "Foglalás a recepción", massageVat: "Az árak az áfát tartalmazzák.",
+          massagePartial: "Klasszikus részleges masszázs", massageFull: "Klasszikus teljes testmasszázs", massageAroma: "Relaxáló aromaterápiás masszázs",
+          massageStones: "Lávaköves masszázs", massageSport: "Sportmasszázs", massageFeet: "Talpreflexológiai masszázs",
+          massageNeck: "Gyors felfrissülés – nyak és váll", massageFace: "Kozmetikai arc-nyirokdrenázs", massageBody: "Teljes testkezelés",
           wellnessCall: "Időpont egyeztetése", wellnessEmail: "E-mail a recepciónak",
           stayTitle: "Tartózkodása alatt",
           wifi: "Ingyenes Wi‑Fi érhető el a szálloda egész területén.",
           wifiPassword: "Wi‑Fi jelszó",
           wifiAccess: "hotelraj2023",
           parkingTitle: "Parkolás", parking: "A szálloda mellett ingyenes, privát parkoló áll vendégeink rendelkezésére.",
+          charging: "A parkoló mellett elektromosautó-töltő érhető el a ZSE Drive alkalmazással.",
           gamesTitle: "Társasjátékok", games: "A társasjátékok díjmentesen kölcsönözhetők a szobába.",
           outdoorTitle: "Programok", outdoor: "Túrázás, kerékpározás, vízi sportok és szezonális programok érhetők el a közelben.",
           flexTitle: "Korai bejelentkezés vagy késői kijelentkezés",
@@ -1291,18 +1497,23 @@
           wellnessTitle: "Wellness Raj", wellnessEntry: "wstęp do wellness", wellnessBadge: "Cennik wellness",
           wellnessHeading: "Dwie godziny relaksu", wellnessAdult: "Osoba dorosła", wellnessChild: "Dziecko do 15 lat", wellnessDurationShort: "2 godz.", wellnessPriceDuration: "/ 2 godz.",
           wellnessHoursShort: "10–21", wellnessHoursLabel: "godziny otwarcia", wellnessHours: "Otwarte codziennie 10:00–21:00 · ostatnie wejście o 19:00",
+          wellnessMemberTitle: "Członkowie Tradičné družstvo", wellnessMemberPrice: "Dorosły 15 € · dziecko 9 €",
           wellnessText: "Wellness nie jest wliczone w każdy pobyt. Cennik obowiązuje gości hotelowych i osoby niezakwaterowane; termin należy uzgodnić w recepcji.",
           wellnessChildrenRule: "Dzieci do 15 lat mogą korzystać ze strefy wellness wyłącznie do godziny 17:00. Sauna fińska nie jest przeznaczona dla dzieci.",
           wellnessServicesTitle: "Zabiegi · 10 € / osoba",
           bemerDescription: "Wspiera mikrokrążenie i regenerację organizmu.",
           zapperDescription: "Wspiera witalność i ogólną równowagę.",
-          wellnessMassage: "Masaże można rezerwować w recepcji.",
+          massageTitle: "Cennik masaży", massageBooking: "Rezerwacja w recepcji", massageVat: "Ceny zawierają VAT.",
+          massagePartial: "Klasyczny masaż częściowy", massageFull: "Klasyczny masaż całego ciała", massageAroma: "Relaksacyjny masaż aromaterapeutyczny",
+          massageStones: "Masaż gorącymi kamieniami", massageSport: "Masaż sportowy", massageFeet: "Masaż refleksologiczny stóp",
+          massageNeck: "Szybka ulga – kark i ramiona", massageFace: "Kosmetyczny drenaż limfatyczny twarzy", massageBody: "Zabieg na całe ciało",
           wellnessCall: "Uzgodnij wejście", wellnessEmail: "Napisz do recepcji",
           stayTitle: "Podczas pobytu",
           wifi: "Bezpłatne Wi‑Fi jest dostępne na terenie całego hotelu.",
           wifiPassword: "Hasło Wi‑Fi",
           wifiAccess: "hotelraj2023",
           parkingTitle: "Parking", parking: "Przy hotelu dostępny jest bezpłatny prywatny parking dla gości.",
+          charging: "Przy parkingu dostępne jest ładowanie samochodów elektrycznych za pomocą aplikacji ZSE Drive.",
           gamesTitle: "Gry planszowe", games: "Gry planszowe można bezpłatnie wypożyczyć do pokoju.",
           outdoorTitle: "Atrakcje", outdoor: "W pobliżu dostępne są piesze wycieczki, jazda na rowerze, sporty wodne i atrakcje sezonowe.",
           flexTitle: "Wcześniejsze zameldowanie lub późniejsze wymeldowanie",
@@ -1340,18 +1551,23 @@
           wellnessTitle: "Wellness Raj", wellnessEntry: "Wellnesseintritt", wellnessBadge: "Wellnesspreise",
           wellnessHeading: "Zwei Stunden Erholung", wellnessAdult: "Erwachsene", wellnessChild: "Kind unter 15 Jahren", wellnessDurationShort: "2 Std.", wellnessPriceDuration: "/ 2 Std.",
           wellnessHoursShort: "10–21", wellnessHoursLabel: "Öffnungszeiten", wellnessHours: "Täglich 10:00–21:00 Uhr geöffnet · letzter Einlass um 19:00 Uhr",
+          wellnessMemberTitle: "Mitglieder von Tradičné družstvo", wellnessMemberPrice: "Erwachsene 15 € · Kind 9 €",
           wellnessText: "Der Wellnesseintritt ist nicht bei jedem Aufenthalt inklusive. Die Preise gelten für Hotelgäste und externe Gäste; bitte vereinbaren Sie den Termin an der Rezeption.",
           wellnessChildrenRule: "Kinder unter 15 Jahren dürfen den Wellnessbereich nur bis 17:00 Uhr nutzen. Die finnische Sauna ist nicht für Kinder vorgesehen.",
           wellnessServicesTitle: "Anwendungen · 10 € / Person",
           bemerDescription: "Zur Unterstützung der Mikrozirkulation und Regeneration.",
           zapperDescription: "Zur Unterstützung von Vitalität und allgemeinem Wohlbefinden.",
-          wellnessMassage: "Massagen können an der Rezeption gebucht werden.",
+          massageTitle: "Massagepreise", massageBooking: "An der Rezeption buchbar", massageVat: "Preise inkl. MwSt.",
+          massagePartial: "Klassische Teilmassage", massageFull: "Klassische Ganzkörpermassage", massageAroma: "Entspannende Aromatherapie-Massage",
+          massageStones: "Hot-Stone-Massage", massageSport: "Sportmassage", massageFeet: "Fußreflexzonenmassage",
+          massageNeck: "Schnelle Entlastung – Nacken und Schultern", massageFace: "Kosmetische Lymphdrainage im Gesicht", massageBody: "Ganzkörperanwendung",
           wellnessCall: "Eintritt vereinbaren", wellnessEmail: "E-Mail an die Rezeption",
           stayTitle: "Während Ihres Aufenthalts",
           wifi: "Kostenloses WLAN steht im gesamten Hotel zur Verfügung.",
           wifiPassword: "WLAN-Passwort",
           wifiAccess: "hotelraj2023",
           parkingTitle: "Parken", parking: "Kostenlose Privatparkplätze stehen direkt am Hotel zur Verfügung.",
+          charging: "Am Parkplatz steht eine E-Ladestation zur Verfügung, nutzbar über die ZSE Drive App.",
           gamesTitle: "Brettspiele", games: "Brettspiele können kostenlos für das Zimmer ausgeliehen werden.",
           outdoorTitle: "Aktivitäten", outdoor: "Wandern, Radfahren, Wassersport und saisonale Aktivitäten sind in der Umgebung möglich.",
           flexTitle: "Frühere Anreise oder spätere Abreise",
