@@ -399,7 +399,7 @@
         font-weight: 750;
       }
       .wellness-copy p { margin: 14px 0 0; color: #dbeae6; }
-      .wellness-copy .wellness-services {
+      .wellness-services {
         margin-top: 12px;
         padding: 12px 13px;
         border: 1px solid rgba(255,255,255,.2);
@@ -408,6 +408,48 @@
         color: #e7f1ed;
         font-size: .88rem;
         line-height: 1.45;
+      }
+      .wellness-services-title {
+        margin: 0;
+        color: #f1c76f;
+        font-size: .875rem;
+        font-weight: 850;
+        letter-spacing: .055em;
+        text-transform: uppercase;
+      }
+      .wellness-treatments {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 10px;
+      }
+      .wellness-treatment {
+        min-width: 0;
+        padding: 10px 11px;
+        border-radius: 10px;
+        background: rgba(255,255,255,.07);
+      }
+      .wellness-treatment strong,
+      .wellness-treatment span {
+        display: block;
+        overflow-wrap: anywhere;
+      }
+      .wellness-treatment strong {
+        color: white;
+        font-size: .95rem;
+      }
+      .wellness-treatment span {
+        margin-top: 3px;
+        color: #dbeae6;
+        font-size: .875rem;
+        line-height: 1.4;
+        hyphens: auto;
+      }
+      .wellness-copy .wellness-massage {
+        margin: 10px 0 0;
+        color: #e7f1ed;
+        font-size: .875rem;
+        font-weight: 700;
       }
       .wellness-copy .wellness-rule {
         margin-top: 12px;
@@ -788,6 +830,7 @@
         }
         .link-button { width: 100%; }
         .wellness-action { width: 100%; }
+        .wellness-treatments { grid-template-columns: 1fr; }
         .safety-actions { grid-template-columns: 1fr 1fr; }
         .safety-link:last-child { grid-column: 1 / -1; }
         .feedback-card { align-items: stretch; flex-direction: column; }
@@ -939,7 +982,20 @@
               </dl>
               <p data-i18n="wellnessText">Vstup nie je zahrnutý v každom pobyte. Cenník platí pre ubytovaných aj neubytovaných hostí; termín si dohodnite na recepcii.</p>
               <p class="wellness-rule" data-i18n="wellnessChildrenRule">Deti do 15 rokov môžu wellness využívať iba do 17:00. Fínska sauna nie je určená pre deti.</p>
-              <p class="wellness-services" data-i18n="wellnessServices">Procedúry BEMER EVO a Super Ravo Zapper: 10 € / osoba. Masáže si môžete objednať na recepcii.</p>
+              <div class="wellness-services">
+                <p class="wellness-services-title" data-i18n="wellnessServicesTitle">Procedúry · 10 € / osoba</p>
+                <div class="wellness-treatments">
+                  <div class="wellness-treatment">
+                    <strong>BEMER EVO</strong>
+                    <span data-i18n="bemerDescription">Podpora mikrocirkulácie a regenerácie organizmu.</span>
+                  </div>
+                  <div class="wellness-treatment">
+                    <strong>Super Ravo Zapper</strong>
+                    <span data-i18n="zapperDescription">Podpora vitality a celkovej rovnováhy.</span>
+                  </div>
+                </div>
+                <p class="wellness-massage" data-i18n="wellnessMassage">Masáže si môžete objednať na recepcii.</p>
+              </div>
               <div class="wellness-actions">
                 <a class="wellness-action primary" href="tel:+421911930991" data-i18n="wellnessCall">Dohodnúť vstup</a>
                 <a class="wellness-action" href="mailto:reception@hotelraj.eu" data-i18n="wellnessEmail">Napísať recepcii</a>
@@ -1090,7 +1146,10 @@
           wellnessHoursShort: "10–21", wellnessHoursLabel: "otváracie hodiny", wellnessHours: "Otvorené denne 10:00–21:00 · posledný vstup 19:00",
           wellnessText: "Vstup nie je zahrnutý v každom pobyte. Cenník platí pre ubytovaných aj neubytovaných hostí; termín si dohodnite na recepcii.",
           wellnessChildrenRule: "Deti do 15 rokov môžu wellness využívať iba do 17:00. Fínska sauna nie je určená pre deti.",
-          wellnessServices: "Procedúry BEMER EVO a Super Ravo Zapper: 10 € / osoba. Masáže si môžete objednať na recepcii.",
+          wellnessServicesTitle: "Procedúry · 10 € / osoba",
+          bemerDescription: "Podpora mikrocirkulácie a regenerácie organizmu.",
+          zapperDescription: "Podpora vitality a celkovej rovnováhy.",
+          wellnessMassage: "Masáže si môžete objednať na recepcii.",
           wellnessCall: "Dohodnúť vstup", wellnessEmail: "Napísať recepcii",
           stayTitle: "Počas pobytu",
           wifi: "Bezplatné Wi‑Fi je dostupné vo všetkých priestoroch hotela.",
@@ -1136,7 +1195,10 @@
           wellnessHoursShort: "10–21", wellnessHoursLabel: "opening hours", wellnessHours: "Open daily 10:00–21:00 · last entry 19:00",
           wellnessText: "Wellness is not included with every stay. Prices apply to hotel guests and day visitors; please arrange your entry at reception.",
           wellnessChildrenRule: "Children under 15 may use the wellness area only until 17:00. The Finnish sauna is not intended for children.",
-          wellnessServices: "BEMER EVO and Super Ravo Zapper treatments: €10 per person. Massages can be booked at reception.",
+          wellnessServicesTitle: "Treatments · €10 per person",
+          bemerDescription: "Supports microcirculation and recovery.",
+          zapperDescription: "Supports vitality and overall balance.",
+          wellnessMassage: "Massages can be booked at reception.",
           wellnessCall: "Arrange entry", wellnessEmail: "E-mail reception",
           stayTitle: "During your stay",
           wifi: "Complimentary Wi‑Fi is available throughout the hotel.",
@@ -1182,7 +1244,10 @@
           wellnessHoursShort: "10–21", wellnessHoursLabel: "nyitvatartás", wellnessHours: "Nyitva naponta 10:00–21:00 · utolsó belépés 19:00",
           wellnessText: "A wellnessbelépő nem minden tartózkodás része. Az árak a szállóvendégekre és a külső vendégekre is érvényesek; kérjük, egyeztessen időpontot a recepción.",
           wellnessChildrenRule: "A 15 év alatti gyermekek csak 17:00 óráig használhatják a wellnessrészleget. A finn szauna gyermekek számára nem használható.",
-          wellnessServices: "BEMER EVO és Super Ravo Zapper kezelések: 10 € / fő. Masszázs a recepción foglalható.",
+          wellnessServicesTitle: "Kezelések · 10 € / fő",
+          bemerDescription: "A mikrokeringés és a regeneráció támogatására.",
+          zapperDescription: "A vitalitás és az általános egyensúly támogatására.",
+          wellnessMassage: "Masszázs a recepción foglalható.",
           wellnessCall: "Időpont egyeztetése", wellnessEmail: "E-mail a recepciónak",
           stayTitle: "Tartózkodása alatt",
           wifi: "Ingyenes Wi‑Fi érhető el a szálloda egész területén.",
@@ -1228,7 +1293,10 @@
           wellnessHoursShort: "10–21", wellnessHoursLabel: "godziny otwarcia", wellnessHours: "Otwarte codziennie 10:00–21:00 · ostatnie wejście o 19:00",
           wellnessText: "Wellness nie jest wliczone w każdy pobyt. Cennik obowiązuje gości hotelowych i osoby niezakwaterowane; termin należy uzgodnić w recepcji.",
           wellnessChildrenRule: "Dzieci do 15 lat mogą korzystać ze strefy wellness wyłącznie do godziny 17:00. Sauna fińska nie jest przeznaczona dla dzieci.",
-          wellnessServices: "Zabiegi BEMER EVO i Super Ravo Zapper: 10 € / osoba. Masaże można rezerwować w recepcji.",
+          wellnessServicesTitle: "Zabiegi · 10 € / osoba",
+          bemerDescription: "Wspiera mikrokrążenie i regenerację organizmu.",
+          zapperDescription: "Wspiera witalność i ogólną równowagę.",
+          wellnessMassage: "Masaże można rezerwować w recepcji.",
           wellnessCall: "Uzgodnij wejście", wellnessEmail: "Napisz do recepcji",
           stayTitle: "Podczas pobytu",
           wifi: "Bezpłatne Wi‑Fi jest dostępne na terenie całego hotelu.",
@@ -1274,7 +1342,10 @@
           wellnessHoursShort: "10–21", wellnessHoursLabel: "Öffnungszeiten", wellnessHours: "Täglich 10:00–21:00 Uhr geöffnet · letzter Einlass um 19:00 Uhr",
           wellnessText: "Der Wellnesseintritt ist nicht bei jedem Aufenthalt inklusive. Die Preise gelten für Hotelgäste und externe Gäste; bitte vereinbaren Sie den Termin an der Rezeption.",
           wellnessChildrenRule: "Kinder unter 15 Jahren dürfen den Wellnessbereich nur bis 17:00 Uhr nutzen. Die finnische Sauna ist nicht für Kinder vorgesehen.",
-          wellnessServices: "BEMER EVO- und Super Ravo Zapper-Anwendungen: 10 € / Person. Massagen können an der Rezeption gebucht werden.",
+          wellnessServicesTitle: "Anwendungen · 10 € / Person",
+          bemerDescription: "Zur Unterstützung der Mikrozirkulation und Regeneration.",
+          zapperDescription: "Zur Unterstützung von Vitalität und allgemeinem Wohlbefinden.",
+          wellnessMassage: "Massagen können an der Rezeption gebucht werden.",
           wellnessCall: "Eintritt vereinbaren", wellnessEmail: "E-Mail an die Rezeption",
           stayTitle: "Während Ihres Aufenthalts",
           wifi: "Kostenloses WLAN steht im gesamten Hotel zur Verfügung.",
