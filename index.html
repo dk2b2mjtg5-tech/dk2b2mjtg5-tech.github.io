@@ -8,6 +8,7 @@
     <meta name="description" content="Praktické informácie pre hostí Hotela Raj v Dobšinskej Maši: príchod, odchod, raňajky, reštaurácia a kontakty." />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com/beacon.min.js; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; worker-src 'none'; upgrade-insecure-requests" />
+    <link rel="preload" as="image" href="hotel-raj.webp" type="image/webp" fetchpriority="high" />
     <title>Hotel Raj – Informácie pre hostí</title>
     <style>
       :root {
@@ -123,7 +124,7 @@
         inset: 0;
         background:
           linear-gradient(180deg, rgba(10,30,27,.28) 0%, rgba(10,30,27,.14) 34%, rgba(10,30,27,.90) 100%),
-          url("hotel-raj.jpg") center 44% / cover no-repeat;
+          url("hotel-raj.webp") center 44% / cover no-repeat;
         transform: scale(1.01);
       }
 
@@ -770,7 +771,7 @@
 
       .guest-details {
         display: grid;
-        gap: 9px;
+        gap: 12px;
         margin-top: 12px;
       }
       .guest-details details {
@@ -780,7 +781,7 @@
         background: var(--paper);
       }
       .guest-details summary {
-        min-height: 52px;
+        min-height: 56px;
         padding: 14px 44px 14px 17px;
         position: relative;
         display: flex;
@@ -885,13 +886,13 @@
         padding: 13px;
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 8px;
+        gap: 12px;
         border-top: 1px solid #b9d6c8;
         background: rgba(255,255,255,.58);
       }
       .rental-action {
         min-width: 0;
-        min-height: 48px;
+        min-height: 56px;
         padding: 9px 10px;
         display: flex;
         align-items: center;
@@ -1065,7 +1066,7 @@
 
       footer {
         padding: 24px 20px 38px;
-        color: #63726d;
+        color: #596862;
         font-size: .86rem;
         text-align: center;
       }
@@ -1585,7 +1586,7 @@
           wellnessServicesTitle: "Procedúry · 10 € / osoba",
           bemerDescription: "Podpora mikrocirkulácie a regenerácie organizmu.",
           zapperDescription: "Podpora vitality a celkovej rovnováhy.",
-          massageTitle: "Cenník masáží", massageBooking: "Objednanie na recepcii", massageVat: "Ceny sú uvedené s DPH.",
+          massageTitle: "Cenník masáží", massageBooking: "Objednajte sa na recepcii", massageVat: "Ceny sú uvedené s DPH.",
           massagePartial: "Klasická čiastočná masáž", massageFull: "Klasická celotelová masáž", massageAroma: "Relaxačná aromaterapeutická masáž",
           massageStones: "Masáž lávovými kameňmi", massageSport: "Športová masáž", massageFeet: "Reflexná masáž chodidiel",
           massageNeck: "Rýchla úľava – šija a ramená", massageFace: "Kozmetická lymfodrenáž tváre", massageBody: "Celotelová procedúra",
@@ -1604,7 +1605,7 @@
           roomInfoTitle: "Izba a služby",
           roomInfoText: "Izby majú vlastnú kúpeľňu, TV a chladničku. Ak potrebujete ďalšie uteráky alebo pomoc na izbe, kontaktujte recepciu.",
           familyInfoTitle: "Pre rodiny a pobyty so psom",
-          familyInfoText: "Detskú postieľku pre deti do 3 rokov poskytuje hotel bezplatne. Pobyt so psom je možný iba vo vybraných izbách po dohode s recepciou.",
+          familyInfoText: "Detskú postieľku poskytuje hotel deťom do 3 rokov bezplatne. Pobyt so psom je možný iba vo vybraných izbách po dohode s recepciou.",
           rentalKicker: "Požičovňa a zážitky", rentalTitle: "Požičovňa ALEX",
           rentalIntro: "Športové vybavenie a programy so sprievodcom priamo v Dobšinskej Maši.",
           rentalEquipmentLabel: "Vybavenie", rentalEquipment: "Bicykle a e‑biky · paddleboardy · člny, kajaky a kanoe · horolezecká výstroj",
@@ -1639,7 +1640,7 @@
           wellnessHeading: "Two hours of relaxation", wellnessAdult: "Adult", wellnessChild: "Child under 15", wellnessPriceDuration: "/ 2 hrs",
           wellnessHoursShort: "10–21", wellnessHoursLabel: "opening hours", wellnessHours: "Open daily 10:00–21:00", wellnessLastEntry: "Last entry at 19:00",
           wellnessMemberTitle: "Tradičné družstvo members", wellnessMemberPrice: "Adult €15 · child €9",
-          wellnessText: "Wellness is not included with every stay. Prices apply to hotel guests and day visitors; please arrange your entry at reception.",
+          wellnessText: "Wellness is not included with every stay. Prices apply to hotel guests and day visitors; please book your wellness visit at reception.",
           wellnessChildrenRule: "Children under 15 may use the wellness area only until 17:00. The Finnish sauna is not intended for children.",
           wellnessServicesTitle: "Treatments · €10 per person",
           bemerDescription: "Supports microcirculation and recovery.",
@@ -1648,13 +1649,13 @@
           massagePartial: "Classic partial massage", massageFull: "Classic full-body massage", massageAroma: "Relaxing aromatherapy massage",
           massageStones: "Hot stone massage", massageSport: "Sports massage", massageFeet: "Foot reflexology massage",
           massageNeck: "Quick relief – neck and shoulders", massageFace: "Cosmetic facial lymphatic drainage", massageBody: "Full-body treatment",
-          wellnessCall: "Arrange entry", wellnessEmail: "E-mail reception",
+          wellnessCall: "Book a wellness visit", wellnessEmail: "E-mail reception",
           stayTitle: "During your stay",
           wifi: "Complimentary Wi‑Fi is available throughout the hotel.",
           wifiPassword: "Password",
           wifiAccess: "hotelraj2023",
           parkingTitle: "Parking", parking: "Complimentary private parking is available next to the hotel.",
-          chargingTitle: "Electric mobility",
+          chargingTitle: "EV charging",
           charging: "EV charging is available by the car park via the ZSE Drive app.",
           gamesTitle: "Board games", games: "Board games can be borrowed for your room free of charge.",
           outdoorTitle: "Activities", outdoor: "Hiking, cycling, water sports and seasonal activities are available nearby.",
@@ -1669,10 +1670,10 @@
           rentalEquipmentLabel: "Equipment", rentalEquipment: "Bikes and e‑bikes · paddleboards · boats, kayaks and canoes · climbing equipment",
           rentalServicesLabel: "Services", rentalServices: "Climbing school · UIMLA mountain leader · full-day and team-building programmes",
           rentalWebsite: "View the offer", rentalCall: "Call",
-          tripsTitle: "Discover the area", tripsIntro: "Three ideas for exploring the heart of Slovak Paradise. Always check the weather and seasonal operation before setting out.",
+          tripsTitle: "Discover the area", tripsIntro: "Three ideas for exploring the heart of Slovak Paradise. Always check the weather and seasonal availability before setting out.",
           tripGeravyLabel: "Views and hiking", tripGeravyText: "A trip from Dedinky to the Geravy plateau. Trails and the chairlift operate seasonally; check conditions before setting out.",
           tripCaveLabel: "Family trip", tripCaveTitle: "Dobšinská Ice Cave", tripCaveText: "A world-famous ice cave. It operates seasonally, and the entrance is reached by an uphill walk of about 25 minutes.",
-          tripLakeLabel: "Relax by the water", tripLakeText: "A peaceful walk, reservoir views and seasonal water activities in the immediate Dedinky area.",
+          tripLakeLabel: "Relax by the water", tripLakeText: "A peaceful walk, reservoir views and seasonal water activities near Dedinky.",
           openTip: "Open details", navigate: "Navigate", conditions: "Check mountain conditions and alerts",
           contactTitle: "Reception & contact", call: "Call", email: "Send e-mail", map: "Open map",
           safetyTitle: "Stay safe in the mountains", safetyText: "Check the weather and current alerts before hiking. For non-urgent matters, please contact reception first.",
@@ -1699,7 +1700,7 @@
           wellnessHoursShort: "10–21", wellnessHoursLabel: "nyitvatartás", wellnessHours: "Nyitva naponta 10:00–21:00", wellnessLastEntry: "Utolsó belépés 19:00-kor",
           wellnessMemberTitle: "A Tradičné družstvo tagjai", wellnessMemberPrice: "Felnőtt 15 € · gyermek 9 €",
           wellnessText: "A wellnessbelépő nem minden tartózkodás része. Az árak a szállóvendégekre és a külső vendégekre is érvényesek; kérjük, egyeztessen időpontot a recepción.",
-          wellnessChildrenRule: "A 15 év alatti gyermekek csak 17:00 óráig használhatják a wellnessrészleget. A finn szauna gyermekek számára nem használható.",
+          wellnessChildrenRule: "A 15 év alatti gyermekek csak 17:00 óráig használhatják a wellnessrészleget. A finn szaunát gyermekek nem használhatják.",
           wellnessServicesTitle: "Kezelések · 10 € / fő",
           bemerDescription: "A mikrokeringés és a regeneráció támogatására.",
           zapperDescription: "A vitalitás és az általános egyensúly támogatására.",
@@ -1757,7 +1758,7 @@
           wellnessHeading: "Dwie godziny relaksu", wellnessAdult: "Osoba dorosła", wellnessChild: "Dziecko do 15 lat", wellnessPriceDuration: "/ 2 godz.",
           wellnessHoursShort: "10–21", wellnessHoursLabel: "godziny otwarcia", wellnessHours: "Otwarte codziennie 10:00–21:00", wellnessLastEntry: "Ostatnie wejście o 19:00",
           wellnessMemberTitle: "Członkowie Tradičné družstvo", wellnessMemberPrice: "Dorosły 15 € · dziecko 9 €",
-          wellnessText: "Wellness nie jest wliczone w każdy pobyt. Cennik obowiązuje gości hotelowych i osoby niezakwaterowane; termin należy uzgodnić w recepcji.",
+          wellnessText: "Wstęp do strefy wellness nie jest wliczony w cenę każdego pobytu. Cennik obowiązuje gości hotelowych i osoby niezakwaterowane; wizytę należy zarezerwować w recepcji.",
           wellnessChildrenRule: "Dzieci do 15 lat mogą korzystać ze strefy wellness wyłącznie do godziny 17:00. Sauna fińska nie jest przeznaczona dla dzieci.",
           wellnessServicesTitle: "Zabiegi · 10 € / osoba",
           bemerDescription: "Wspiera mikrokrążenie i regenerację organizmu.",
@@ -1766,7 +1767,7 @@
           massagePartial: "Klasyczny masaż częściowy", massageFull: "Klasyczny masaż całego ciała", massageAroma: "Relaksacyjny masaż aromaterapeutyczny",
           massageStones: "Masaż gorącymi kamieniami", massageSport: "Masaż sportowy", massageFeet: "Masaż refleksologiczny stóp",
           massageNeck: "Szybka ulga – kark i ramiona", massageFace: "Kosmetyczny drenaż limfatyczny twarzy", massageBody: "Zabieg na całe ciało",
-          wellnessCall: "Uzgodnij wejście", wellnessEmail: "Napisz do recepcji",
+          wellnessCall: "Zarezerwuj wejście", wellnessEmail: "Napisz do recepcji",
           stayTitle: "Podczas pobytu",
           wifi: "Bezpłatne Wi‑Fi jest dostępne na terenie całego hotelu.",
           wifiPassword: "Hasło Wi‑Fi",
@@ -1794,7 +1795,7 @@
           openTip: "Otwórz informacje", navigate: "Nawiguj", conditions: "Sprawdź warunki i ostrzeżenia górskie",
           contactTitle: "Recepcja i kontakt", call: "Zadzwoń", email: "Wyślij e-mail", map: "Otwórz mapę",
           safetyTitle: "Bezpiecznie w górach", safetyText: "Przed wyjściem sprawdź pogodę i aktualne ostrzeżenia. W sprawach niepilnych prosimy najpierw skontaktować się z recepcją.",
-          emergencyLabel: "Numer alarmowy", mountainRescue: "Górskie Pogotowie Ratunkowe", alerts: "Aktualne ostrzeżenia górskie",
+          emergencyLabel: "Numer alarmowy", mountainRescue: "Słowacka Górska Służba Ratownicza (HZS)", alerts: "Aktualne ostrzeżenia górskie",
           feedbackTitle: "Czy wszystko było w porządku?", feedbackText: "Państwa opinia pomaga nam ulepszać pobyt kolejnych gości.", feedbackButton: "Napisz do hotelu", feedbackSubject: "Opinia gościa – Hotel Raj",
           footerText: "Więcej informacji znajdą Państwo na", officialSite: "oficjalnej stronie hotelu", photo: "Zdjęcie: Hotel Raj",
           country: "Słowacja", languageLabel: "Wybór języka", quickLabel: "Najważniejsze godziny"
@@ -1825,7 +1826,7 @@
           massagePartial: "Klassische Teilmassage", massageFull: "Klassische Ganzkörpermassage", massageAroma: "Entspannende Aromatherapie-Massage",
           massageStones: "Hot-Stone-Massage", massageSport: "Sportmassage", massageFeet: "Fußreflexzonenmassage",
           massageNeck: "Schnelle Entlastung – Nacken und Schultern", massageFace: "Kosmetische Lymphdrainage im Gesicht", massageBody: "Ganzkörperanwendung",
-          wellnessCall: "Eintritt vereinbaren", wellnessEmail: "E-Mail an die Rezeption",
+          wellnessCall: "Wellness buchen", wellnessEmail: "E-Mail an die Rezeption",
           stayTitle: "Während Ihres Aufenthalts",
           wifi: "Kostenloses WLAN steht im gesamten Hotel zur Verfügung.",
           wifiPassword: "WLAN-Passwort",
@@ -1846,7 +1847,7 @@
           rentalEquipmentLabel: "Ausrüstung", rentalEquipment: "Fahrräder und E‑Bikes · SUP-Boards · Boote, Kajaks und Kanus · Kletterausrüstung",
           rentalServicesLabel: "Angebote", rentalServices: "Kletterschule · UIMLA-Bergwanderführer · Ganztages- und Teambuilding-Programme",
           rentalWebsite: "Angebot ansehen", rentalCall: "Anrufen",
-          tripsTitle: "Entdecken Sie die Umgebung", tripsIntro: "Drei Ausflugstipps mitten im Slowakischen Paradies. Prüfen Sie vor dem Aufbruch immer das Wetter und den saisonalen Betrieb.",
+          tripsTitle: "Entdecken Sie die Umgebung", tripsIntro: "Drei Ausflugstipps mitten im Slowakischen Paradies. Prüfen Sie vor dem Aufbruch immer das Wetter und die saisonale Verfügbarkeit.",
           tripGeravyLabel: "Aussicht und Wandern", tripGeravyText: "Ein Ausflug von Dedinky auf die Geravy-Hochebene. Wanderwege und Sessellift sind saisonabhängig; prüfen Sie vorab die Bedingungen.",
           tripCaveLabel: "Familienausflug", tripCaveTitle: "Dobschauer Eishöhle", tripCaveText: "Eine weltberühmte Eishöhle. Sie ist saisonal geöffnet; zum Eingang führt ein etwa 25-minütiger Anstieg.",
           tripLakeLabel: "Erholung am Wasser", tripLakeText: "Ein ruhiger Spaziergang, Ausblicke auf den Stausee und saisonale Wasseraktivitäten in unmittelbarer Nähe von Dedinky.",
