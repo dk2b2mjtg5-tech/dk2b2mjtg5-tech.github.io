@@ -357,6 +357,11 @@
         line-height: 1.05;
       }
       .wellness-hours {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 8px 12px;
         margin: 14px 0 0;
         padding: 10px 12px;
         border: 1px solid rgba(241,199,111,.42);
@@ -366,6 +371,21 @@
         font-size: .9rem;
         font-weight: 800;
         line-height: 1.4;
+      }
+      .wellness-last-entry {
+        flex: 0 0 auto;
+        display: inline-flex;
+        align-items: center;
+        min-height: 30px;
+        padding: 5px 10px;
+        border: 1px solid rgba(255,158,147,.52);
+        border-radius: 999px;
+        background: rgba(153,43,43,.28);
+        color: #ffd8d2;
+        font-size: .82rem;
+        font-weight: 900;
+        letter-spacing: .01em;
+        white-space: nowrap;
       }
       .wellness-prices {
         display: grid;
@@ -426,9 +446,10 @@
       .wellness-services {
         margin-top: 12px;
         padding: 12px 13px;
-        border: 1px solid rgba(255,255,255,.2);
+        border: 1px solid rgba(241,199,111,.58);
         border-radius: 12px;
-        background: rgba(255,255,255,.07);
+        background: linear-gradient(145deg, rgba(215,168,78,.14), rgba(255,255,255,.055));
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);
         color: #e7f1ed;
         font-size: .88rem;
         line-height: 1.45;
@@ -450,8 +471,9 @@
       .wellness-treatment {
         min-width: 0;
         padding: 10px 11px;
+        border: 1px solid rgba(241,199,111,.3);
         border-radius: 10px;
-        background: rgba(255,255,255,.07);
+        background: rgba(10,48,43,.32);
       }
       .wellness-treatment strong,
       .wellness-treatment span {
@@ -459,7 +481,7 @@
         overflow-wrap: anywhere;
       }
       .wellness-treatment strong {
-        color: white;
+        color: #f1c76f;
         font-size: .95rem;
       }
       .wellness-treatment span {
@@ -471,7 +493,10 @@
       }
       .massage-menu {
         margin-top: 10px;
-        border-top: 1px solid rgba(255,255,255,.16);
+        padding: 0 10px 10px;
+        border: 1px solid rgba(241,199,111,.4);
+        border-radius: 10px;
+        background: rgba(10,48,43,.25);
       }
       .massage-menu summary {
         min-height: 52px;
@@ -487,7 +512,7 @@
       .massage-summary-copy { min-width: 0; }
       .massage-summary-copy strong,
       .massage-summary-copy small { display: block; }
-      .massage-summary-copy strong { color: white; font-size: .95rem; }
+      .massage-summary-copy strong { color: #f1c76f; font-size: .95rem; }
       .massage-summary-copy small {
         margin-top: 2px;
         color: #dbeae6;
@@ -626,14 +651,19 @@
         gap: 10px;
         margin-top: 13px;
         padding: 9px 11px;
-        border: 1px dashed #afc7bf;
-        border-radius: 11px;
-        background: #f1f7f4;
+        border: 1px solid #d2b45f;
+        border-radius: 13px;
+        background: linear-gradient(135deg, #fff9e9, #edf7f3);
+        box-shadow: 0 6px 16px rgba(16,46,42,.09), inset 0 0 0 1px rgba(255,255,255,.78);
       }
-      .credential span { color: var(--muted); font-size: .79rem; font-weight: 700; }
+      .credential span { color: #6b5929; font-size: .79rem; font-weight: 850; }
       .credential strong {
-        max-width: 68%;
-        color: var(--forest-950);
+        max-width: none;
+        padding: 6px 10px;
+        border-radius: 8px;
+        background: var(--forest-950);
+        color: #fff4d3;
+        box-shadow: 0 3px 9px rgba(16,46,42,.18);
         font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
         font-size: .88rem;
         font-weight: 800;
@@ -711,7 +741,25 @@
         background: #dfece8;
         color: var(--forest-950);
       }
-      .notice strong { display: block; }
+      .notice-icon { flex: 0 0 auto; }
+      .notice-content { min-width: 0; flex: 1; }
+      .notice-heading {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 8px 16px;
+      }
+      .notice-heading strong { min-width: 0; }
+      .notice-price {
+        flex: 0 0 auto;
+        padding: 3px 9px;
+        border-radius: 999px;
+        background: var(--forest-950);
+        color: white;
+        font-weight: 900;
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
       .notice p { margin: 2px 0 0; color: #36574f; font-size: .94rem; }
 
       .guest-details {
@@ -907,10 +955,11 @@
         align-items: center;
         justify-content: space-between;
         gap: 12px;
-        border: 1px solid #b9cdc7;
+        border: 1px solid #e0a1a1;
         border-radius: 15px;
-        background: #e8f1ee;
-        color: var(--forest-900);
+        background: linear-gradient(135deg, #fff4f3, #fbe7e7);
+        box-shadow: 0 8px 20px rgba(135,38,38,.08);
+        color: #822b2b;
         font-weight: 850;
         text-decoration: none;
       }
@@ -949,12 +998,13 @@
       .safety-card {
         margin-top: 18px;
         padding: 18px;
-        border: 1px solid #ead7c6;
+        border: 1px solid #e0a1a1;
         border-radius: 18px;
-        background: #fff7ee;
+        background: linear-gradient(145deg, #fff6f5, #fbe8e8);
+        box-shadow: 0 10px 25px rgba(135,38,38,.08);
       }
-      .safety-card h3 { margin: 0; color: #563317; font-size: 1.02rem; }
-      .safety-card p { margin: 6px 0 14px; color: #744825; font-size: .94rem; }
+      .safety-card h3 { margin: 0; color: #7d2525; font-size: 1.02rem; }
+      .safety-card p { margin: 6px 0 14px; color: #804646; font-size: .94rem; }
       .safety-actions {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -967,17 +1017,17 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        border: 1px solid #ead7c6;
+        border: 1px solid #e6b5b5;
         border-radius: 12px;
-        background: rgba(255,255,255,.64);
-        color: #744825;
+        background: rgba(255,255,255,.72);
+        color: #804646;
         font-size: .78rem;
         font-weight: 800;
         line-height: 1.2;
         text-align: center;
         text-decoration: none;
       }
-      .safety-link strong { color: #563317; font-size: 1.05rem; }
+      .safety-link strong { color: #7d2525; font-size: 1.05rem; }
 
       .feedback-card {
         margin-top: 12px;
@@ -1091,6 +1141,7 @@
           flex-direction: column;
           gap: 4px;
         }
+        .wellness-last-entry { width: 100%; justify-content: center; }
         .massage-row { grid-template-columns: 1fr; gap: 4px; }
         .massage-meta { justify-content: space-between; }
         .safety-actions { grid-template-columns: 1fr 1fr; }
@@ -1238,7 +1289,10 @@
             <div class="wellness-copy">
               <span class="wellness-badge" data-i18n="wellnessBadge">Cenník wellness</span>
               <h3 data-i18n="wellnessHeading">Dve hodiny oddychu</h3>
-              <p class="wellness-hours" data-i18n="wellnessHours">Otvorené denne 10:00–21:00 · posledný vstup 19:00</p>
+              <p class="wellness-hours">
+                <span data-i18n="wellnessHours">Otvorené denne 10:00–21:00</span>
+                <strong class="wellness-last-entry" data-i18n="wellnessLastEntry">Posledný vstup o 19:00</strong>
+              </p>
               <dl class="wellness-prices">
                 <div class="wellness-price">
                   <dt data-i18n="wellnessAdult">Dospelá osoba</dt>
@@ -1370,10 +1424,13 @@
             </article>
           </div>
           <div class="notice">
-            <span aria-hidden="true">◷</span>
-            <div>
-              <strong data-i18n="flexTitle">Skorší príchod alebo neskorší odchod</strong>
-              <p data-i18n="flexText">Je možný podľa dostupnosti za poplatok 20 €. Dohodnite sa, prosím, s recepciou.</p>
+            <span class="notice-icon" aria-hidden="true">◷</span>
+            <div class="notice-content">
+              <div class="notice-heading">
+                <strong data-i18n="flexTitle">Skorší príchod alebo neskorší odchod</strong>
+                <span class="notice-price">20 €</span>
+              </div>
+              <p data-i18n="flexText">Možné podľa dostupnosti. Dohodnite sa, prosím, s recepciou.</p>
             </div>
           </div>
           <div class="guest-details">
@@ -1514,7 +1571,7 @@
           menu: "Otvoriť jedálny lístok",
           wellnessTitle: "Wellness Raj", wellnessBadge: "Cenník wellness",
           wellnessHeading: "Dve hodiny oddychu", wellnessAdult: "Dospelá osoba", wellnessChild: "Dieťa do 15 rokov", wellnessPriceDuration: "/ 2 h",
-          wellnessHoursShort: "10–21", wellnessHoursLabel: "otváracie hodiny", wellnessHours: "Otvorené denne 10:00–21:00 · posledný vstup 19:00",
+          wellnessHoursShort: "10–21", wellnessHoursLabel: "otváracie hodiny", wellnessHours: "Otvorené denne 10:00–21:00", wellnessLastEntry: "Posledný vstup o 19:00",
           wellnessMemberTitle: "Členovia Tradičného družstva", wellnessMemberPrice: "Dospelý 15 € · dieťa 9 €",
           wellnessText: "Vstup nie je zahrnutý v každom pobyte. Cenník platí pre ubytovaných aj neubytovaných hostí; termín si dohodnite na recepcii.",
           wellnessChildrenRule: "Deti do 15 rokov môžu wellness využívať iba do 17:00. Fínska sauna nie je určená pre deti.",
@@ -1536,7 +1593,7 @@
           gamesTitle: "Spoločenské hry", games: "Spoločenské hry si môžete bezplatne zapožičať na izbu.",
           outdoorTitle: "Aktivity", outdoor: "Turistika, cyklistika, vodné športy a sezónne aktivity sú dostupné v okolí.",
           flexTitle: "Skorší príchod alebo neskorší odchod",
-          flexText: "Je možný podľa dostupnosti za poplatok 20 €. Dohodnite sa, prosím, s recepciou.",
+          flexText: "Možné podľa dostupnosti. Dohodnite sa, prosím, s recepciou.",
           roomInfoTitle: "Izba a služby",
           roomInfoText: "Izby majú vlastnú kúpeľňu, TV a chladničku. Ak potrebujete ďalšie uteráky alebo pomoc na izbe, kontaktujte recepciu.",
           familyInfoTitle: "Pre rodiny a pobyty so psom",
@@ -1573,7 +1630,7 @@
           menu: "Open the menu",
           wellnessTitle: "Wellness Raj", wellnessBadge: "Wellness prices",
           wellnessHeading: "Two hours of relaxation", wellnessAdult: "Adult", wellnessChild: "Child under 15", wellnessPriceDuration: "/ 2 hrs",
-          wellnessHoursShort: "10–21", wellnessHoursLabel: "opening hours", wellnessHours: "Open daily 10:00–21:00 · last entry 19:00",
+          wellnessHoursShort: "10–21", wellnessHoursLabel: "opening hours", wellnessHours: "Open daily 10:00–21:00", wellnessLastEntry: "Last entry at 19:00",
           wellnessMemberTitle: "Tradičné družstvo members", wellnessMemberPrice: "Adult €15 · child €9",
           wellnessText: "Wellness is not included with every stay. Prices apply to hotel guests and day visitors; please arrange your entry at reception.",
           wellnessChildrenRule: "Children under 15 may use the wellness area only until 17:00. The Finnish sauna is not intended for children.",
@@ -1595,7 +1652,7 @@
           gamesTitle: "Board games", games: "Board games can be borrowed for your room free of charge.",
           outdoorTitle: "Activities", outdoor: "Hiking, cycling, water sports and seasonal activities are available nearby.",
           flexTitle: "Early check-in or late check-out",
-          flexText: "Available upon request and subject to availability for a €20 fee. Please arrange it with reception.",
+          flexText: "Subject to availability. Please arrange it with reception.",
           roomInfoTitle: "Your room and services",
           roomInfoText: "Rooms have a private bathroom, TV and refrigerator. For extra towels or assistance in your room, please contact reception.",
           familyInfoTitle: "Families and stays with dogs",
@@ -1632,7 +1689,7 @@
           menu: "Étlap megnyitása",
           wellnessTitle: "Wellness Raj", wellnessBadge: "Wellness árak",
           wellnessHeading: "Két óra kikapcsolódás", wellnessAdult: "Felnőtt", wellnessChild: "15 év alatti gyermek", wellnessPriceDuration: "/ 2 óra",
-          wellnessHoursShort: "10–21", wellnessHoursLabel: "nyitvatartás", wellnessHours: "Nyitva naponta 10:00–21:00 · utolsó belépés 19:00",
+          wellnessHoursShort: "10–21", wellnessHoursLabel: "nyitvatartás", wellnessHours: "Nyitva naponta 10:00–21:00", wellnessLastEntry: "Utolsó belépés 19:00-kor",
           wellnessMemberTitle: "A Tradičné družstvo tagjai", wellnessMemberPrice: "Felnőtt 15 € · gyermek 9 €",
           wellnessText: "A wellnessbelépő nem minden tartózkodás része. Az árak a szállóvendégekre és a külső vendégekre is érvényesek; kérjük, egyeztessen időpontot a recepción.",
           wellnessChildrenRule: "A 15 év alatti gyermekek csak 17:00 óráig használhatják a wellnessrészleget. A finn szauna gyermekek számára nem használható.",
@@ -1654,7 +1711,7 @@
           gamesTitle: "Társasjátékok", games: "A társasjátékok díjmentesen kölcsönözhetők a szobába.",
           outdoorTitle: "Programok", outdoor: "Túrázás, kerékpározás, vízi sportok és szezonális programok érhetők el a közelben.",
           flexTitle: "Korai bejelentkezés vagy késői kijelentkezés",
-          flexText: "Elérhetőségtől függően, 20 € díj ellenében lehetséges. Kérjük, egyeztessen a recepcióval.",
+          flexText: "A szabad kapacitás függvényében. Kérjük, egyeztessen a recepcióval.",
           roomInfoTitle: "Szoba és szolgáltatások",
           roomInfoText: "A szobák saját fürdőszobával, TV-vel és hűtőszekrénnyel rendelkeznek. További törölközőért vagy segítségért forduljon a recepcióhoz.",
           familyInfoTitle: "Családok és kutyával érkezők",
@@ -1691,7 +1748,7 @@
           menu: "Otwórz menu",
           wellnessTitle: "Wellness Raj", wellnessBadge: "Cennik wellness",
           wellnessHeading: "Dwie godziny relaksu", wellnessAdult: "Osoba dorosła", wellnessChild: "Dziecko do 15 lat", wellnessPriceDuration: "/ 2 godz.",
-          wellnessHoursShort: "10–21", wellnessHoursLabel: "godziny otwarcia", wellnessHours: "Otwarte codziennie 10:00–21:00 · ostatnie wejście o 19:00",
+          wellnessHoursShort: "10–21", wellnessHoursLabel: "godziny otwarcia", wellnessHours: "Otwarte codziennie 10:00–21:00", wellnessLastEntry: "Ostatnie wejście o 19:00",
           wellnessMemberTitle: "Członkowie Tradičné družstvo", wellnessMemberPrice: "Dorosły 15 € · dziecko 9 €",
           wellnessText: "Wellness nie jest wliczone w każdy pobyt. Cennik obowiązuje gości hotelowych i osoby niezakwaterowane; termin należy uzgodnić w recepcji.",
           wellnessChildrenRule: "Dzieci do 15 lat mogą korzystać ze strefy wellness wyłącznie do godziny 17:00. Sauna fińska nie jest przeznaczona dla dzieci.",
@@ -1713,7 +1770,7 @@
           gamesTitle: "Gry planszowe", games: "Gry planszowe można bezpłatnie wypożyczyć do pokoju.",
           outdoorTitle: "Atrakcje", outdoor: "W pobliżu dostępne są piesze wycieczki, jazda na rowerze, sporty wodne i atrakcje sezonowe.",
           flexTitle: "Wcześniejsze zameldowanie lub późniejsze wymeldowanie",
-          flexText: "Możliwe w zależności od dostępności za opłatą 20 €. Prosimy uzgodnić to z recepcją.",
+          flexText: "W zależności od dostępności. Prosimy uzgodnić to z recepcją.",
           roomInfoTitle: "Pokój i usługi",
           roomInfoText: "Pokoje mają prywatną łazienkę, telewizor i lodówkę. Jeśli potrzebują Państwo dodatkowych ręczników lub pomocy w pokoju, prosimy skontaktować się z recepcją.",
           familyInfoTitle: "Dla rodzin i pobytów z psem",
@@ -1750,7 +1807,7 @@
           menu: "Speisekarte öffnen",
           wellnessTitle: "Wellness Raj", wellnessBadge: "Wellnesspreise",
           wellnessHeading: "Zwei Stunden Erholung", wellnessAdult: "Erwachsene", wellnessChild: "Kind unter 15 Jahren", wellnessPriceDuration: "/ 2 Std.",
-          wellnessHoursShort: "10–21", wellnessHoursLabel: "Öffnungszeiten", wellnessHours: "Täglich 10:00–21:00 Uhr geöffnet · letzter Einlass um 19:00 Uhr",
+          wellnessHoursShort: "10–21", wellnessHoursLabel: "Öffnungszeiten", wellnessHours: "Täglich 10:00–21:00 Uhr geöffnet", wellnessLastEntry: "Letzter Einlass um 19:00 Uhr",
           wellnessMemberTitle: "Mitglieder von Tradičné družstvo", wellnessMemberPrice: "Erwachsene 15 € · Kind 9 €",
           wellnessText: "Der Wellnesseintritt ist nicht bei jedem Aufenthalt inklusive. Die Preise gelten für Hotelgäste und externe Gäste; bitte vereinbaren Sie den Termin an der Rezeption.",
           wellnessChildrenRule: "Kinder unter 15 Jahren dürfen den Wellnessbereich nur bis 17:00 Uhr nutzen. Die finnische Sauna ist nicht für Kinder vorgesehen.",
@@ -1772,7 +1829,7 @@
           gamesTitle: "Brettspiele", games: "Brettspiele können kostenlos für das Zimmer ausgeliehen werden.",
           outdoorTitle: "Aktivitäten", outdoor: "Wandern, Radfahren, Wassersport und saisonale Aktivitäten sind in der Umgebung möglich.",
           flexTitle: "Frühere Anreise oder spätere Abreise",
-          flexText: "Je nach Verfügbarkeit gegen eine Gebühr von 20 €. Bitte vereinbaren Sie dies mit der Rezeption.",
+          flexText: "Je nach Verfügbarkeit. Bitte vereinbaren Sie dies mit der Rezeption.",
           roomInfoTitle: "Zimmer und Service",
           roomInfoText: "Die Zimmer verfügen über ein eigenes Bad, TV und Kühlschrank. Für zusätzliche Handtücher oder Hilfe im Zimmer wenden Sie sich bitte an die Rezeption.",
           familyInfoTitle: "Familien und Aufenthalte mit Hund",
