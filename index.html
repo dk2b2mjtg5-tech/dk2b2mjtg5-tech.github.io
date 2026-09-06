@@ -244,6 +244,12 @@
       }
 
       .section { margin-top: 28px; }
+      @supports (content-visibility: auto) {
+        main > .section {
+          content-visibility: auto;
+          contain-intrinsic-size: auto 700px;
+        }
+      }
       .section-heading {
         margin: 0 4px 12px;
         font-family: Georgia, "Times New Roman", serif;
@@ -1184,6 +1190,7 @@
       @media print {
         body { padding: 0; background: white; }
         .shell { width: 100%; box-shadow: none; }
+        main > .section { content-visibility: visible; contain-intrinsic-size: none; }
         .language { display: none; }
         .action-grid { display: none; }
         .hero { min-height: 260px; }
@@ -1853,26 +1860,55 @@
         }
       };
 
-      function setLanguage(language) {
-        const selected = copy[language] ? language : "sk";
-        document.documentElement.lang = selected;
-        document.querySelectorAll("[data-i18n]").forEach((element) => {
-          element.textContent = copy[selected][element.dataset.i18n];
+      const i18nElements = Array.from(document.querySelectorAll("[data-i18n]"));
+      const languageButtons = Array.from(document.querySelectorAll("[data-language]"));
+      const languageGroup = document.querySelector(".language");
+      const quickGrid = document.querySelector(".quick-grid");
+      const actionGrid = document.querySelector(".action-grid");
+      const feedbackEmail = document.querySelector("[data-feedback-email]");
+      const descriptionMeta = document.querySelector('meta[name="description"]');
+      let currentLanguage = "";
+      let languageChangeToken = 0;
+
+      function renderLanguage(selected) {
+        const selectedCopy = copy[selected];
+        i18nElements.forEach((element) => {
+          const value = selectedCopy[element.dataset.i18n];
+          if (element.textContent !== value) element.textContent = value;
         });
-        document.querySelectorAll("[data-language]").forEach((button) => {
-          button.setAttribute("aria-pressed", String(button.dataset.language === selected));
-        });
-        document.querySelector(".language").setAttribute("aria-label", copy[selected].languageLabel);
-        document.querySelector(".quick-grid").setAttribute("aria-label", copy[selected].quickLabel);
-        document.querySelector(".action-grid").setAttribute("aria-label", copy[selected].actionsLabel);
-        document.querySelector("[data-feedback-email]").setAttribute("href", `mailto:reception@hotelraj.eu?subject=${encodeURIComponent(copy[selected].feedbackSubject)}`);
-        document.title = copy[selected].pageTitle;
-        document.querySelector('meta[name="description"]').setAttribute("content", copy[selected].pageDescription);
+        languageGroup.setAttribute("aria-label", selectedCopy.languageLabel);
+        quickGrid.setAttribute("aria-label", selectedCopy.quickLabel);
+        actionGrid.setAttribute("aria-label", selectedCopy.actionsLabel);
+        feedbackEmail.setAttribute("href", `mailto:reception@hotelraj.eu?subject=${encodeURIComponent(selectedCopy.feedbackSubject)}`);
+        document.title = selectedCopy.pageTitle;
+        descriptionMeta.setAttribute("content", selectedCopy.pageDescription);
         try { localStorage.setItem("hotel-raj-language", selected); } catch (_) {}
       }
 
-      document.querySelectorAll("[data-language]").forEach((button) => {
-        button.addEventListener("click", () => setLanguage(button.dataset.language));
+      function setLanguage(language, deferContent = false) {
+        const selected = copy[language] ? language : "sk";
+        if (deferContent && selected === currentLanguage) return;
+        currentLanguage = selected;
+        document.documentElement.lang = selected;
+        languageButtons.forEach((button) => {
+          button.setAttribute("aria-pressed", String(button.dataset.language === selected));
+        });
+
+        const token = ++languageChangeToken;
+        if (!deferContent) {
+          renderLanguage(selected);
+          return;
+        }
+
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            if (token === languageChangeToken) renderLanguage(selected);
+          });
+        });
+      }
+
+      languageButtons.forEach((button) => {
+        button.addEventListener("click", () => setLanguage(button.dataset.language, true));
       });
 
       let savedLanguage;
