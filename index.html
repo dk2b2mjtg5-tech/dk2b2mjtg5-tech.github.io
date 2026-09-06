@@ -6,6 +6,8 @@
     <meta name="theme-color" content="#173f39" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="description" content="Praktické informácie pre hostí Hotela Raj v Dobšinskej Maši: príchod, odchod, raňajky, reštaurácia a kontakty." />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com/beacon.min.js; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; worker-src 'none'; upgrade-insecure-requests" />
     <title>Hotel Raj – Informácie pre hostí</title>
     <style>
       :root {
@@ -1142,11 +1144,11 @@
     <div class="shell">
       <header class="hero">
         <div class="topbar">
-          <div class="brand" aria-label="Hotel Raj">
+          <div class="brand">
             <span class="brand-mark" aria-hidden="true">R</span>
             <span>HOTEL RAJ</span>
           </div>
-          <div class="language" aria-label="Výber jazyka">
+          <div class="language" role="group" aria-label="Výber jazyka">
             <button type="button" data-language="sk" aria-label="Slovenčina" aria-pressed="true">SK</button>
             <button type="button" data-language="en" aria-label="English" aria-pressed="false">EN</button>
             <button type="button" data-language="hu" aria-label="Magyar" aria-pressed="false">HU</button>
@@ -1344,7 +1346,7 @@
                   <strong data-i18n="chargingTitle">Elektromobilita</strong>
                 </div>
                 <p class="charging-info" data-i18n="charging">Pri parkovisku je k dispozícii nabíjanie elektromobilov cez aplikáciu ZSE Drive.</p>
-                <div class="app-links" aria-label="ZSE Drive">
+                <div class="app-links" role="group" aria-label="ZSE Drive">
                   <a class="app-link" href="https://apps.apple.com/sk/app/zse-drive/id1180905521" target="_blank" rel="noopener noreferrer" aria-label="ZSE Drive – App Store">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm5 3.2a.9.9 0 0 0-.9.9v4H7.2a.9.9 0 1 0 0 1.8h3.9v4a.9.9 0 1 0 1.8 0v-4h3.9a.9.9 0 1 0 0-1.8h-3.9v-4a.9.9 0 0 0-.9-.9Z"/></svg>
                     <span><small>ZSE Drive</small><strong>App Store</strong></span>
@@ -1483,7 +1485,7 @@
               <strong data-i18n="feedbackTitle">Bolo všetko v poriadku?</strong>
               <p data-i18n="feedbackText">Vaša spätná väzba nám pomáha zlepšovať pobyt ďalších hostí.</p>
             </div>
-            <a class="feedback-link" href="mailto:reception@hotelraj.eu?subject=Sp%C3%A4tn%C3%A1%20v%C3%A4zba%20-%20Hotel%20Raj" data-i18n="feedbackButton">Napísať hotelu</a>
+            <a class="feedback-link" href="mailto:reception@hotelraj.eu?subject=Sp%C3%A4tn%C3%A1%20v%C3%A4zba%20%E2%80%93%20Hotel%20Raj" data-feedback-email data-i18n="feedbackButton">Napísať hotelu</a>
           </div>
         </section>
       </main>
@@ -1510,8 +1512,8 @@
           surpriseTitle: "Pozornosť hotela",
           surpriseText: "Denne od 15:00 do 17:00 na vás v reštaurácii čaká prekvapenie ako pozornosť hotela.",
           menu: "Otvoriť jedálny lístok",
-          wellnessTitle: "Wellness Raj", wellnessEntry: "wellness vstup", wellnessBadge: "Cenník wellness",
-          wellnessHeading: "Dve hodiny oddychu", wellnessAdult: "Dospelá osoba", wellnessChild: "Dieťa do 15 rokov", wellnessDurationShort: "2 h", wellnessPriceDuration: "/ 2 h",
+          wellnessTitle: "Wellness Raj", wellnessBadge: "Cenník wellness",
+          wellnessHeading: "Dve hodiny oddychu", wellnessAdult: "Dospelá osoba", wellnessChild: "Dieťa do 15 rokov", wellnessPriceDuration: "/ 2 h",
           wellnessHoursShort: "10–21", wellnessHoursLabel: "otváracie hodiny", wellnessHours: "Otvorené denne 10:00–21:00 · posledný vstup 19:00",
           wellnessMemberTitle: "Členovia Tradičného družstva", wellnessMemberPrice: "Dospelý 15 € · dieťa 9 €",
           wellnessText: "Vstup nie je zahrnutý v každom pobyte. Cenník platí pre ubytovaných aj neubytovaných hostí; termín si dohodnite na recepcii.",
@@ -1550,10 +1552,9 @@
           tripLakeLabel: "Oddych pri vode", tripLakeText: "Pokojná prechádzka, výhľady na vodnú nádrž a v sezóne vodné aktivity priamo v okolí Dediniek.",
           openTip: "Otvoriť tip", navigate: "Navigovať", conditions: "Skontrolovať horské podmienky a výstrahy",
           contactTitle: "Recepcia a kontakt", call: "Zavolať", email: "Napísať e‑mail", map: "Otvoriť mapu",
-          emergencyTitle: "Tiesňová linka: 112", emergencyText: " · V menej naliehavých situáciách najprv kontaktujte recepciu.",
           safetyTitle: "Bezpečne v horách", safetyText: "Pred túrou skontrolujte počasie a aktuálne výstrahy. V menej naliehavých situáciách najprv kontaktujte recepciu.",
           emergencyLabel: "Tiesňová linka", mountainRescue: "Horská záchranná služba", alerts: "Aktuálne výstrahy HZS",
-          feedbackTitle: "Bolo všetko v poriadku?", feedbackText: "Vaša spätná väzba nám pomáha zlepšovať pobyt ďalších hostí.", feedbackButton: "Napísať hotelu",
+          feedbackTitle: "Bolo všetko v poriadku?", feedbackText: "Vaša spätná väzba nám pomáha zlepšovať pobyt ďalších hostí.", feedbackButton: "Napísať hotelu", feedbackSubject: "Spätná väzba – Hotel Raj",
           footerText: "Ďalšie informácie nájdete na", officialSite: "oficiálnej stránke hotela", photo: "Foto: Hotel Raj",
           country: "Slovensko", languageLabel: "Výber jazyka", quickLabel: "Najdôležitejšie časy"
         },
@@ -1570,8 +1571,8 @@
           surpriseTitle: "A treat from the hotel",
           surpriseText: "A surprise awaits you in the restaurant every day from 15:00 to 17:00, with our compliments.",
           menu: "Open the menu",
-          wellnessTitle: "Wellness Raj", wellnessEntry: "wellness access", wellnessBadge: "Wellness prices",
-          wellnessHeading: "Two hours of relaxation", wellnessAdult: "Adult", wellnessChild: "Child under 15", wellnessDurationShort: "2 hrs", wellnessPriceDuration: "/ 2 hrs",
+          wellnessTitle: "Wellness Raj", wellnessBadge: "Wellness prices",
+          wellnessHeading: "Two hours of relaxation", wellnessAdult: "Adult", wellnessChild: "Child under 15", wellnessPriceDuration: "/ 2 hrs",
           wellnessHoursShort: "10–21", wellnessHoursLabel: "opening hours", wellnessHours: "Open daily 10:00–21:00 · last entry 19:00",
           wellnessMemberTitle: "Tradičné družstvo members", wellnessMemberPrice: "Adult €15 · child €9",
           wellnessText: "Wellness is not included with every stay. Prices apply to hotel guests and day visitors; please arrange your entry at reception.",
@@ -1610,10 +1611,9 @@
           tripLakeLabel: "Relax by the water", tripLakeText: "A peaceful walk, reservoir views and seasonal water activities in the immediate Dedinky area.",
           openTip: "Open details", navigate: "Navigate", conditions: "Check mountain conditions and alerts",
           contactTitle: "Reception & contact", call: "Call", email: "Send e-mail", map: "Open map",
-          emergencyTitle: "Emergency number: 112", emergencyText: " · For non-urgent matters, please contact reception first.",
           safetyTitle: "Stay safe in the mountains", safetyText: "Check the weather and current alerts before hiking. For non-urgent matters, please contact reception first.",
           emergencyLabel: "Emergency number", mountainRescue: "Mountain Rescue Service", alerts: "Current mountain alerts",
-          feedbackTitle: "Was everything to your satisfaction?", feedbackText: "Your feedback helps us improve the stay of future guests.", feedbackButton: "Write to the hotel",
+          feedbackTitle: "Was everything to your satisfaction?", feedbackText: "Your feedback helps us improve the stay of future guests.", feedbackButton: "Write to the hotel", feedbackSubject: "Guest feedback – Hotel Raj",
           footerText: "Find more information on the", officialSite: "hotel’s official website", photo: "Photo: Hotel Raj",
           country: "Slovakia", languageLabel: "Language selection", quickLabel: "Essential times"
         },
@@ -1630,8 +1630,8 @@
           surpriseTitle: "A szálloda ajándéka",
           surpriseText: "15:00 és 17:00 között meglepetés várja Önt az étteremben, a szálloda ajándékaként.",
           menu: "Étlap megnyitása",
-          wellnessTitle: "Wellness Raj", wellnessEntry: "wellnessbelépő", wellnessBadge: "Wellness árak",
-          wellnessHeading: "Két óra kikapcsolódás", wellnessAdult: "Felnőtt", wellnessChild: "15 év alatti gyermek", wellnessDurationShort: "2 óra", wellnessPriceDuration: "/ 2 óra",
+          wellnessTitle: "Wellness Raj", wellnessBadge: "Wellness árak",
+          wellnessHeading: "Két óra kikapcsolódás", wellnessAdult: "Felnőtt", wellnessChild: "15 év alatti gyermek", wellnessPriceDuration: "/ 2 óra",
           wellnessHoursShort: "10–21", wellnessHoursLabel: "nyitvatartás", wellnessHours: "Nyitva naponta 10:00–21:00 · utolsó belépés 19:00",
           wellnessMemberTitle: "A Tradičné družstvo tagjai", wellnessMemberPrice: "Felnőtt 15 € · gyermek 9 €",
           wellnessText: "A wellnessbelépő nem minden tartózkodás része. Az árak a szállóvendégekre és a külső vendégekre is érvényesek; kérjük, egyeztessen időpontot a recepción.",
@@ -1670,10 +1670,9 @@
           tripLakeLabel: "Pihenés a víznél", tripLakeText: "Nyugodt séta, kilátás a víztározóra és szezonális vízi programok Dedinky közvetlen közelében.",
           openTip: "Részletek", navigate: "Navigáció", conditions: "Hegyi körülmények és riasztások ellenőrzése",
           contactTitle: "Recepció és elérhetőség", call: "Hívás", email: "E-mail küldése", map: "Térkép megnyitása",
-          emergencyTitle: "Segélyhívó: 112", emergencyText: " · Nem sürgős esetben először a recepciót hívja.",
           safetyTitle: "Biztonságban a hegyekben", safetyText: "Túrázás előtt ellenőrizze az időjárást és az aktuális riasztásokat. Nem sürgős esetben először a recepciót hívja.",
           emergencyLabel: "Segélyhívó", mountainRescue: "Hegyi mentőszolgálat", alerts: "Aktuális hegyi riasztások",
-          feedbackTitle: "Minden rendben volt?", feedbackText: "Visszajelzése segít abban, hogy tovább javítsuk vendégeink tartózkodását.", feedbackButton: "Írjon a szállodának",
+          feedbackTitle: "Minden rendben volt?", feedbackText: "Visszajelzése segít abban, hogy tovább javítsuk vendégeink tartózkodását.", feedbackButton: "Írjon a szállodának", feedbackSubject: "Vendégvisszajelzés – Hotel Raj",
           footerText: "További információk a", officialSite: "szálloda hivatalos weboldalán", photo: "Fotó: Hotel Raj",
           country: "Szlovákia", languageLabel: "Nyelvválasztás", quickLabel: "Legfontosabb időpontok"
         },
@@ -1690,8 +1689,8 @@
           surpriseTitle: "Upominek od hotelu",
           surpriseText: "Codziennie między 15:00 a 17:00 w restauracji czeka na Państwa niespodzianka – upominek od hotelu.",
           menu: "Otwórz menu",
-          wellnessTitle: "Wellness Raj", wellnessEntry: "wstęp do wellness", wellnessBadge: "Cennik wellness",
-          wellnessHeading: "Dwie godziny relaksu", wellnessAdult: "Osoba dorosła", wellnessChild: "Dziecko do 15 lat", wellnessDurationShort: "2 godz.", wellnessPriceDuration: "/ 2 godz.",
+          wellnessTitle: "Wellness Raj", wellnessBadge: "Cennik wellness",
+          wellnessHeading: "Dwie godziny relaksu", wellnessAdult: "Osoba dorosła", wellnessChild: "Dziecko do 15 lat", wellnessPriceDuration: "/ 2 godz.",
           wellnessHoursShort: "10–21", wellnessHoursLabel: "godziny otwarcia", wellnessHours: "Otwarte codziennie 10:00–21:00 · ostatnie wejście o 19:00",
           wellnessMemberTitle: "Członkowie Tradičné družstvo", wellnessMemberPrice: "Dorosły 15 € · dziecko 9 €",
           wellnessText: "Wellness nie jest wliczone w każdy pobyt. Cennik obowiązuje gości hotelowych i osoby niezakwaterowane; termin należy uzgodnić w recepcji.",
@@ -1730,10 +1729,9 @@
           tripLakeLabel: "Odpoczynek nad wodą", tripLakeText: "Spokojny spacer, widoki na zbiornik oraz sezonowe atrakcje wodne w bezpośredniej okolicy Dediniek.",
           openTip: "Otwórz informacje", navigate: "Nawiguj", conditions: "Sprawdź warunki i ostrzeżenia górskie",
           contactTitle: "Recepcja i kontakt", call: "Zadzwoń", email: "Wyślij e-mail", map: "Otwórz mapę",
-          emergencyTitle: "Numer alarmowy: 112", emergencyText: " · W sprawach niepilnych prosimy najpierw skontaktować się z recepcją.",
           safetyTitle: "Bezpiecznie w górach", safetyText: "Przed wyjściem sprawdź pogodę i aktualne ostrzeżenia. W sprawach niepilnych prosimy najpierw skontaktować się z recepcją.",
           emergencyLabel: "Numer alarmowy", mountainRescue: "Górskie Pogotowie Ratunkowe", alerts: "Aktualne ostrzeżenia górskie",
-          feedbackTitle: "Czy wszystko było w porządku?", feedbackText: "Państwa opinia pomaga nam ulepszać pobyt kolejnych gości.", feedbackButton: "Napisz do hotelu",
+          feedbackTitle: "Czy wszystko było w porządku?", feedbackText: "Państwa opinia pomaga nam ulepszać pobyt kolejnych gości.", feedbackButton: "Napisz do hotelu", feedbackSubject: "Opinia gościa – Hotel Raj",
           footerText: "Więcej informacji znajdą Państwo na", officialSite: "oficjalnej stronie hotelu", photo: "Zdjęcie: Hotel Raj",
           country: "Słowacja", languageLabel: "Wybór języka", quickLabel: "Najważniejsze godziny"
         },
@@ -1750,8 +1748,8 @@
           surpriseTitle: "Eine Aufmerksamkeit des Hauses",
           surpriseText: "Zwischen 15:00 und 17:00 erwartet Sie im Restaurant eine kleine Überraschung als Aufmerksamkeit des Hauses.",
           menu: "Speisekarte öffnen",
-          wellnessTitle: "Wellness Raj", wellnessEntry: "Wellnesseintritt", wellnessBadge: "Wellnesspreise",
-          wellnessHeading: "Zwei Stunden Erholung", wellnessAdult: "Erwachsene", wellnessChild: "Kind unter 15 Jahren", wellnessDurationShort: "2 Std.", wellnessPriceDuration: "/ 2 Std.",
+          wellnessTitle: "Wellness Raj", wellnessBadge: "Wellnesspreise",
+          wellnessHeading: "Zwei Stunden Erholung", wellnessAdult: "Erwachsene", wellnessChild: "Kind unter 15 Jahren", wellnessPriceDuration: "/ 2 Std.",
           wellnessHoursShort: "10–21", wellnessHoursLabel: "Öffnungszeiten", wellnessHours: "Täglich 10:00–21:00 Uhr geöffnet · letzter Einlass um 19:00 Uhr",
           wellnessMemberTitle: "Mitglieder von Tradičné družstvo", wellnessMemberPrice: "Erwachsene 15 € · Kind 9 €",
           wellnessText: "Der Wellnesseintritt ist nicht bei jedem Aufenthalt inklusive. Die Preise gelten für Hotelgäste und externe Gäste; bitte vereinbaren Sie den Termin an der Rezeption.",
@@ -1790,10 +1788,9 @@
           tripLakeLabel: "Erholung am Wasser", tripLakeText: "Ein ruhiger Spaziergang, Ausblicke auf den Stausee und saisonale Wasseraktivitäten in unmittelbarer Nähe von Dedinky.",
           openTip: "Details öffnen", navigate: "Navigieren", conditions: "Bedingungen und Warnungen für die Berge prüfen",
           contactTitle: "Rezeption und Kontakt", call: "Anrufen", email: "E-Mail senden", map: "Karte öffnen",
-          emergencyTitle: "Notruf: 112", emergencyText: " · In weniger dringenden Fällen wenden Sie sich bitte zuerst an die Rezeption.",
           safetyTitle: "Sicher in den Bergen", safetyText: "Prüfen Sie vor einer Wanderung das Wetter und aktuelle Warnungen. In weniger dringenden Fällen wenden Sie sich bitte zuerst an die Rezeption.",
           emergencyLabel: "Notruf", mountainRescue: "Bergrettungsdienst", alerts: "Aktuelle Bergwarnungen",
-          feedbackTitle: "War alles zu Ihrer Zufriedenheit?", feedbackText: "Ihr Feedback hilft uns, den Aufenthalt zukünftiger Gäste weiter zu verbessern.", feedbackButton: "Dem Hotel schreiben",
+          feedbackTitle: "War alles zu Ihrer Zufriedenheit?", feedbackText: "Ihr Feedback hilft uns, den Aufenthalt zukünftiger Gäste weiter zu verbessern.", feedbackButton: "Dem Hotel schreiben", feedbackSubject: "Rückmeldung – Hotel Raj",
           footerText: "Weitere Informationen finden Sie auf der", officialSite: "offiziellen Hotelwebseite", photo: "Foto: Hotel Raj",
           country: "Slowakei", languageLabel: "Sprachauswahl", quickLabel: "Wichtige Zeiten"
         }
@@ -1811,6 +1808,7 @@
         document.querySelector(".language").setAttribute("aria-label", copy[selected].languageLabel);
         document.querySelector(".quick-grid").setAttribute("aria-label", copy[selected].quickLabel);
         document.querySelector(".action-grid").setAttribute("aria-label", copy[selected].actionsLabel);
+        document.querySelector("[data-feedback-email]").setAttribute("href", `mailto:reception@hotelraj.eu?subject=${encodeURIComponent(copy[selected].feedbackSubject)}`);
         document.title = copy[selected].pageTitle;
         document.querySelector('meta[name="description"]').setAttribute("content", copy[selected].pageDescription);
         try { localStorage.setItem("hotel-raj-language", selected); } catch (_) {}
