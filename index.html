@@ -1074,6 +1074,10 @@
       footer a { color: var(--forest-900); font-weight: 750; text-underline-offset: 3px; }
 
       @media (max-width: 560px) {
+        main > .section {
+          content-visibility: visible;
+          contain-intrinsic-size: none;
+        }
         .topbar {
           flex-wrap: wrap;
           justify-content: center;
