@@ -1066,11 +1066,12 @@
 
       footer {
         padding: 24px 20px 38px;
-        color: #596862;
+        background: var(--cream);
+        color: #43514c;
         font-size: .86rem;
         text-align: center;
       }
-      footer a { color: var(--forest-800); font-weight: 750; text-underline-offset: 3px; }
+      footer a { color: var(--forest-900); font-weight: 750; text-underline-offset: 3px; }
 
       @media (max-width: 560px) {
         .topbar {
@@ -1160,7 +1161,10 @@
         .rental-row { grid-template-columns: 1fr; }
         .rental-row dt { padding-bottom: 4px; }
         .rental-row dd { padding-top: 4px; border-left: 0; }
-        .rental-actions { grid-template-columns: 1fr; }
+        .guest-details { gap: 16px; }
+        .guest-details summary { min-height: 64px; }
+        .rental-actions { grid-template-columns: 1fr; gap: 16px; }
+        .rental-action { min-height: 64px; }
       }
 
       @media (max-width: 430px) {
